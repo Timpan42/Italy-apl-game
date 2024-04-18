@@ -8,7 +8,7 @@
 size = Vector2(478, 31)
 
 [node name="CheckPoints" type="Area2D"]
-collision_mask = 2
+collision_layer = 2
 script = ExtResource("1_7p6xo")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]

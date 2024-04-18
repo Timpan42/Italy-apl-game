@@ -8,6 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var canStopMomentum : bool = true 
 var onCheckPoint : bool = true 
 var lastCheckPoint : int;
+var bounsTimer : float = 0
 signal playerBounce
 
 func _physics_process(delta):
@@ -20,10 +21,13 @@ func _physics_process(delta):
 func NotOnCheckPoint(delta):
 	if velocity.y < maxFallVelocity:
 		velocity.y += gravity * delta
+		bounsTimer += delta
 	if is_on_floor():
+		print(bounsTimer)
+		bounsTimer = 0
 		canStopMomentum = true
 		playerBounce.emit()
-		velocity.y += - bounceForce
+		velocity.y += -bounceForce
 		
 	if Input.is_action_just_pressed("to_left_line"):
 		if position.x - toLineForce >= 0:
