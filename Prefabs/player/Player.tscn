@@ -12,6 +12,7 @@ shader_parameter/corner_scale = 1.0
 radius = 64.846
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
 slide_on_ceiling = false
 script = ExtResource("1_gp5ph")
 

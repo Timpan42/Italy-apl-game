@@ -1,21 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://8g4fw0ko7jhi"]
+[gd_scene load_steps=5 format=3 uid="uid://8g4fw0ko7jhi"]
 
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="1_5w24u"]
 [ext_resource type="PackedScene" uid="uid://wtebfil78odi" path="res://Prefabs/Platforms/Base-Platform.tscn" id="1_vx3j3"]
+[ext_resource type="PackedScene" uid="uid://dmt6hhnqekjpk" path="res://Prefabs/Platforms/Check-Points.tscn" id="3_6kt6i"]
+[ext_resource type="PackedScene" uid="uid://bdgn7kik8hkep" path="res://Prefabs/Platforms/Platform-Holder.tscn" id="3_ipq25"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="PlatformsHolder" type="Node2D" parent="."]
+[node name="PlatformHolder" parent="." instance=ExtResource("3_ipq25")]
 
-[node name="Platform3" parent="PlatformsHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(400, 100)
+[node name="Start" parent="PlatformHolder" instance=ExtResource("3_6kt6i")]
+position = Vector2(0, 604)
 
-[node name="Platform2" parent="PlatformsHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(77, 313)
+[node name="Platform" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
+position = Vector2(240, 350)
 
-[node name="Platform" parent="PlatformsHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, 640)
+[node name="Platform2" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
+position = Vector2(77, 140)
+
+[node name="Platform3" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
+position = Vector2(404, -25)
+
+[node name="CheckPoints" parent="PlatformHolder" instance=ExtResource("3_6kt6i")]
+position = Vector2(0, -387)
+Id = 1
 
 [node name="Player" parent="." instance=ExtResource("1_5w24u")]
-position = Vector2(240, 530)
+position = Vector2(236, 559)
 scale = Vector2(0.8, 0.8)
+
+[connection signal="playerEntered" from="PlatformHolder/Start" to="Player" method="_on_check_points_player_entered"]
+[connection signal="playerEntered" from="PlatformHolder/CheckPoints" to="Player" method="_on_check_points_player_entered"]
+[connection signal="playerBounce" from="Player" to="PlatformHolder" method="_on_player_player_bounce"]
