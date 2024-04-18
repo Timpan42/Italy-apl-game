@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://slp0tjqip346"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Text-System.gd" id="1_fgdet"]
+[ext_resource type="PackedScene" uid="uid://caksx8hh2clxb" path="res://Prefabs/UI/Show-Text.tscn" id="2_ixn4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gmdk"]
+size = Vector2(491, 65)
+
+[node name="TextStystem" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_fgdet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4gmdk")
+
+[node name="ShowText" parent="." instance=ExtResource("2_ixn4w")]
+offset_left = -244.0
+offset_top = -75.0
+offset_right = 246.0
+offset_bottom = 33.0
+scale = Vector2(0.992897, 1.0097)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

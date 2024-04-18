@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8g4fw0ko7jhi"]
+[gd_scene load_steps=6 format=3 uid="uid://8g4fw0ko7jhi"]
 
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="1_5w24u"]
 [ext_resource type="PackedScene" uid="uid://wtebfil78odi" path="res://Prefabs/Platforms/Base-Platform.tscn" id="1_vx3j3"]
 [ext_resource type="PackedScene" uid="uid://dmt6hhnqekjpk" path="res://Prefabs/Platforms/Check-Points.tscn" id="3_6kt6i"]
 [ext_resource type="PackedScene" uid="uid://bdgn7kik8hkep" path="res://Prefabs/Platforms/Platform-Holder.tscn" id="3_ipq25"]
+[ext_resource type="PackedScene" uid="uid://slp0tjqip346" path="res://Prefabs/Systems/Text-System.tscn" id="5_s20t2"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,6 +21,10 @@ position = Vector2(77, 140)
 
 [node name="Platform3" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
 position = Vector2(404, -25)
+
+[node name="TextStystem" parent="PlatformHolder" instance=ExtResource("5_s20t2")]
+position = Vector2(247, -120)
+sendText = "Hello there tester, this is to se the limit of the text"
 
 [node name="CheckPoints" parent="PlatformHolder" instance=ExtResource("3_6kt6i")]
 position = Vector2(0, -387)
