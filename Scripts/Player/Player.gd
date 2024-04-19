@@ -1,15 +1,21 @@
 extends CharacterBody2D
 
-const bounceForce : float = 600
-const toLineForce : int = 160
 const maxFallVelocity = 500 
-var windowSizeX = DisplayServer.window_get_size().x
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+const bounceForce : float = 680
 var canStopMomentum : bool = true 
+var bounsTimer : float = 0
+
+const toLineForce : int = 160
+var windowSizeX = DisplayServer.window_get_size().x
+
 var onCheckPoint : bool = true 
 var lastCheckPoint : int;
-var bounsTimer : float = 0
+
 signal playerBounce
+signal playerOnCheckPoint(onCheckPoint)
+signal playerStartedGame()
 
 func _physics_process(delta):
 	if !onCheckPoint:
@@ -20,7 +26,7 @@ func _physics_process(delta):
 
 func NotOnCheckPoint(delta):
 	if velocity.y < maxFallVelocity:
-		velocity.y += gravity * delta
+		velocity.y += 587 * delta
 		bounsTimer += delta
 	if is_on_floor():
 		print(bounsTimer)
@@ -43,9 +49,7 @@ func WhenOnCheckPoint():
 	velocity.y = 0
 
 	if Input.is_action_just_pressed("start_player_movement"):
-		onCheckPoint = false
-		velocity.y += - bounceForce
-		playerBounce.emit()
+		_start_game()
 
 	if Input.is_action_just_pressed("to_left_line"):
 		if position.x - toLineForce >= 0:
@@ -55,6 +59,13 @@ func WhenOnCheckPoint():
 			_move_bethween_lines(toLineForce)
 		
 	move_and_slide()
+
+func _start_game():
+	onCheckPoint = false
+	velocity.y += - bounceForce
+	playerBounce.emit()
+	playerOnCheckPoint.emit(onCheckPoint)
+	playerStartedGame.emit()
 
 func _move_bethween_lines(force : int): 
 	var tween = get_tree().create_tween()
@@ -70,3 +81,5 @@ func _move_player_down():
 func _on_check_points_player_entered(Id):
 	lastCheckPoint = Id
 	onCheckPoint = true
+	playerOnCheckPoint.emit(onCheckPoint)
+	

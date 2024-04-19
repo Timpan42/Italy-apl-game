@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Test-Scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+_JSON_PLATFORM_SAVE="*res://Scripts/Systems/Json-Platform-Saves.gd"
+
 [display]
 
 window/size/viewport_width=480
