@@ -21,7 +21,6 @@ func _process(_delta):
 func _start_song():
 	if !songIsPlaying:
 		if playerStarted && !playerOnCheckPoint:
-			$Timer.start()
 			startSong.emit()
 
 func _on_audio_system_beat(songPosition):
@@ -51,6 +50,3 @@ func _on_player_player_started_game():
 func _on_audio_system_song_is_playing(playing, songMeasures):
 	songIsPlaying = playing
 	maxMeasure = songMeasures
-
-func _on_timer_timeout():
-	print(measuerLooped)

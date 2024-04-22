@@ -54,6 +54,7 @@ scale = Vector2(0.8, 0.8)
 
 [node name="AudioSystem" parent="." instance=ExtResource("6_ifr72")]
 stream = ExtResource("7_10xai")
+bus = &"Master"
 bpm = 135.0
 
 [connection signal="startSong" from="." to="AudioSystem" method="_on_test_scene_start_song"]
