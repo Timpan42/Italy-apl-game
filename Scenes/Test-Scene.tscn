@@ -1,68 +1,73 @@
-[gd_scene load_steps=9 format=3 uid="uid://8g4fw0ko7jhi"]
+[gd_scene load_steps=10 format=3 uid="uid://ckq600ba6nbn3"]
 
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="1_5w24u"]
 [ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_eegcx"]
 [ext_resource type="PackedScene" uid="uid://wtebfil78odi" path="res://Prefabs/Platforms/Base-Platform.tscn" id="1_vx3j3"]
-[ext_resource type="PackedScene" uid="uid://dmt6hhnqekjpk" path="res://Prefabs/Platforms/Check-Points.tscn" id="3_6kt6i"]
-[ext_resource type="PackedScene" uid="uid://bdgn7kik8hkep" path="res://Prefabs/Platforms/Platform-Holder.tscn" id="3_ipq25"]
-[ext_resource type="PackedScene" uid="uid://slp0tjqip346" path="res://Prefabs/Systems/Text-System.tscn" id="5_s20t2"]
-[ext_resource type="PackedScene" uid="uid://bi8yyo2t1bwqr" path="res://Prefabs/Systems/Audio-System.tscn" id="6_ifr72"]
+[ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_2a6th"]
+[ext_resource type="Script" path="res://Scripts/Systems/Json-Jump-Timing.gd" id="5_47go7"]
+[ext_resource type="Script" path="res://Scripts/Systems/Position-Data.gd" id="6_sowjm"]
+[ext_resource type="PackedScene" uid="uid://cj6nquu0idsbj" path="res://Prefabs/Systems/Measuring-Stick.tscn" id="7_0pcor"]
 [ext_resource type="AudioStream" uid="uid://daqe7ar7ef6bu" path="res://Music/SadMusic2018-12-29_-_Cold_Isolation_-_David_Fesliyan.mp3" id="7_10xai"]
 
-[node name="TestPlatformMove" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqvlj"]
+size = Vector2(489, 39)
+
+[node name="TestCamraMove" type="Node2D"]
 script = ExtResource("1_eegcx")
 
-[node name="PlatformHolder" parent="." instance=ExtResource("3_ipq25")]
-
-[node name="Start" parent="PlatformHolder" instance=ExtResource("3_6kt6i")]
-position = Vector2(0, 604)
-
-[node name="Platform" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, 250)
-
-[node name="Platform2" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, -240)
-
-[node name="Platform3" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(246, -950)
-
-[node name="Platform4" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(246, -1140)
-
-[node name="Platform5" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(246, -1430)
-
-[node name="Platform6" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(246, -1720)
-
-[node name="Platform7" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, -1490)
-
-[node name="Platform8" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, -1780)
-
-[node name="Platform9" parent="PlatformHolder" instance=ExtResource("1_vx3j3")]
-position = Vector2(240, -2070)
-
-[node name="TextStystem" parent="PlatformHolder" instance=ExtResource("5_s20t2")]
-position = Vector2(247, -120)
-sendText = "Hello there tester, this is to se the limit of the text"
-
-[node name="Player" parent="." instance=ExtResource("1_5w24u")]
-position = Vector2(236, 559)
-scale = Vector2(0.8, 0.8)
-
-[node name="AudioSystem" parent="." instance=ExtResource("6_ifr72")]
+[node name="AudioSyncPlayer" parent="." instance=ExtResource("2_2a6th")]
 stream = ExtResource("7_10xai")
-bus = &"Master"
-bpm = 135.0
 
-[connection signal="startSong" from="." to="AudioSystem" method="_on_test_scene_start_song"]
-[connection signal="playerEntered" from="PlatformHolder/Start" to="Player" method="_on_check_points_player_entered"]
-[connection signal="playerBounce" from="Player" to="PlatformHolder" method="_on_player_player_bounce"]
-[connection signal="playerOnCheckPoint" from="Player" to="." method="_on_player_player_on_check_point"]
-[connection signal="playerStartedGame" from="Player" to="." method="_on_player_player_started_game"]
-[connection signal="beat" from="AudioSystem" to="." method="_on_audio_system_beat"]
-[connection signal="finished" from="AudioSystem" to="." method="_on_audio_system_finished"]
-[connection signal="measure" from="AudioSystem" to="." method="_on_audio_system_measure"]
-[connection signal="songIsPlaying" from="AudioSystem" to="." method="_on_audio_system_song_is_playing"]
+[node name="player" parent="." instance=ExtResource("1_5w24u")]
+position = Vector2(244, 360)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlayerCamra" type="Camera2D" parent="player"]
+process_callback = 0
+limit_left = 0
+limit_right = 480
+limit_bottom = 720
+position_smoothing_enabled = true
+
+[node name="LoadJumpData" type="Node2D" parent="."]
+script = ExtResource("5_47go7")
+fileName = "res://LevelInfo/Level1.json"
+
+[node name="SavePositionData" type="Node2D" parent="."]
+script = ExtResource("6_sowjm")
+fileName = "-Level1"
+
+[node name="MeasuringHolder" type="Node" parent="."]
+
+[node name="MeasuringStick" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+
+[node name="MeasuringStick2" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+position = Vector2(0, -700)
+
+[node name="MeasuringStick3" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+position = Vector2(0, -1400)
+
+[node name="MeasuringStick4" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+position = Vector2(0, -2100)
+
+[node name="MeasuringStick5" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+position = Vector2(0, -2800)
+
+[node name="MeasuringStick6" parent="MeasuringHolder" instance=ExtResource("7_0pcor")]
+position = Vector2(0, -3500)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(234.5, 9.5)
+shape = SubResource("RectangleShape2D_fqvlj")
+
+[node name="Platform" parent="." instance=ExtResource("1_vx3j3")]
+position = Vector2(526, 232)
+scale = Vector2(0.4, 0.4)
+
+[connection signal="startGame" from="." to="AudioSyncPlayer" method="_on_test_camra_move_start_game"]
+[connection signal="finished" from="AudioSyncPlayer" to="." method="_on_audio_sync_player_finished"]
+[connection signal="isPlaying" from="AudioSyncPlayer" to="." method="_on_audio_sync_player_is_playing"]
+[connection signal="playerJump" from="AudioSyncPlayer" to="player" method="_on_audio_sync_player_player_jump"]
+[connection signal="startGame" from="player" to="." method="_on_player_start_game"]

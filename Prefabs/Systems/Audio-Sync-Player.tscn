@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyarcbl7bqjqr"]
 
-[ext_resource type="Script" path="res://In-sync-audio.gd" id="1_6mgli"]
+[ext_resource type="Script" path="res://Scripts/Systems/In-sync-audio.gd" id="1_6mgli"]
 
 [node name="AudioSyncPlayer" type="AudioStreamPlayer"]
 script = ExtResource("1_6mgli")

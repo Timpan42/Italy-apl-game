@@ -12,6 +12,13 @@ enum SyncSource {
 
 var sync_source = SyncSource.SYSTEM_CLOCK
 
+var seconds
+var data : Array
+@export var startIndex : int
+var dataIndex = 0
+
+signal playerJump()
+
 # Used by system clock.
 var time_begin
 var time_delay
@@ -29,9 +36,20 @@ func _process(_delta):
 	elif sync_source == SyncSource.SOUND_CLOCK:
 		time = get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency() + (1 / COMPENSATE_HZ) * COMPENSATE_FRAMES
 
+	seconds = time
+	
+	if seconds >= data[dataIndex]:
+		playerJump.emit()
+		dataIndex += 1
+
 func _on_test_camra_move_start_game():
 	sync_source = SyncSource.SYSTEM_CLOCK
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-	play()
+	data = $"../LoadJumpData"._load_level_data("time")
+	dataIndex = startIndex
+	if dataIndex != 0:
+		play(data[dataIndex - 1])
+	else:
+		play()
 	isPlaying.emit()

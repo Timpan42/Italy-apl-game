@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://wtebfil78odi"]
+[gd_scene load_steps=4 format=3 uid="uid://wtebfil78odi"]
 
+[ext_resource type="Script" path="res://Scripts/Platform/Platform.gd" id="1_akxqm"]
 [ext_resource type="Texture2D" uid="uid://ctsfsh3kwneuw" path="res://Assets/images.png" id="1_sxs0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfmby"]
@@ -7,6 +8,7 @@ size = Vector2(112, 50)
 
 [node name="Platform" type="StaticBody2D"]
 collision_layer = 2
+script = ExtResource("1_akxqm")
 
 [node name="Mid2" type="Sprite2D" parent="."]
 modulate = Color(0.533333, 0.301961, 1, 1)

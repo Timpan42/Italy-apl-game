@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://drfmlmppfhnvv"]
 
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_8h46b"]
 [ext_resource type="Shader" path="res://Shaders/RoundObject.gdshader" id="1_33nd7"]
-[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_gp5ph"]
 [ext_resource type="Texture2D" uid="uid://cvuebpllh8hro" path="res://Assets/icon.svg" id="2_604be"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bd2fk"]
@@ -14,7 +14,7 @@ radius = 64.846
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_mask = 2
 slide_on_ceiling = false
-script = ExtResource("1_gp5ph")
+script = ExtResource("1_8h46b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_bd2fk")

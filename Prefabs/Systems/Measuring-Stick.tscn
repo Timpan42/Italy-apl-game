@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6nquu0idsbj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ec3pi"]
+
+[node name="MeasuringStick" type="Node2D"]
+
+[node name="1" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 670)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="2" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0.337255, 0, 1)
+position = Vector2(0, 570)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="3" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, 470)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="4" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.764706, 0, 1)
+position = Vector2(0, 370)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="5" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.815686, 1, 1)
+position = Vector2(0, 270)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="6" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.188235, 1, 1)
+position = Vector2(0, 170)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")
+
+[node name="7" type="MeshInstance2D" parent="."]
+modulate = Color(0.823529, 0, 0.858824, 1)
+position = Vector2(0, 70)
+scale = Vector2(40, 100)
+mesh = SubResource("QuadMesh_ec3pi")

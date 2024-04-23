@@ -1,85 +1,45 @@
 extends CharacterBody2D
 
-const maxFallVelocity = 500 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+const  toColumn : Array[int] = [85, 245,405] 
+var columnIndex = 1
 
-const bounceForce : float = 680
-var canStopMomentum : bool = true 
-var bounsTimer : float = 0
-
-const toLineForce : int = 160
+var bounsTimer = 0 
+var jumpId = 1
 var windowSizeX = DisplayServer.window_get_size().x
 
-var onCheckPoint : bool = true 
-var lastCheckPoint : int;
+var canMove = false
+signal startGame
 
-signal playerBounce
-signal playerOnCheckPoint(onCheckPoint)
-signal playerStartedGame()
-
-func _physics_process(delta):
-	if !onCheckPoint:
-		NotOnCheckPoint(delta)
-	else:
-		WhenOnCheckPoint()
-
-
-func NotOnCheckPoint(delta):
-	if velocity.y < maxFallVelocity:
-		velocity.y += 587 * delta
-		bounsTimer += delta
-	if is_on_floor():
-		print(bounsTimer)
-		bounsTimer = 0
-		canStopMomentum = true
-		playerBounce.emit()
-		velocity.y += -bounceForce
-		
-	if Input.is_action_just_pressed("to_left_line"):
-		if position.x - toLineForce >= 0:
-			_move_bethween_lines(-toLineForce)
-	elif  Input.is_action_just_pressed("to_right_line"):
-		if position.x + toLineForce <= windowSizeX:
-			_move_bethween_lines(toLineForce)
-			
-	_move_player_down()
-	move_and_slide()
-
-func WhenOnCheckPoint():
-	velocity.y = 0
-
+func _process(delta):
 	if Input.is_action_just_pressed("start_player_movement"):
-		_start_game()
-
-	if Input.is_action_just_pressed("to_left_line"):
-		if position.x - toLineForce >= 0:
-			_move_bethween_lines(-toLineForce)
-	elif  Input.is_action_just_pressed("to_right_line"):
-		if position.x + toLineForce <= windowSizeX:
-			_move_bethween_lines(toLineForce)
-		
+		canMove = true
+		startGame.emit()
+	
+	if !canMove:
+		return
+	
+	bounsTimer += delta
+	
+	#_inputs_move_column()
 	move_and_slide()
 
-func _start_game():
-	onCheckPoint = false
-	velocity.y += - bounceForce
-	playerBounce.emit()
-	playerOnCheckPoint.emit(onCheckPoint)
-	playerStartedGame.emit()
+func _bouns():
+	var tween
 
-func _move_bethween_lines(force : int): 
-	var tween = get_tree().create_tween()
-	var playerMovePosition = position.x
-	playerMovePosition += force
-	tween.tween_property(self, "position", Vector2(playerMovePosition, position.y), 0.1).set_trans(Tween.TRANS_QUAD)
+func _inputs_move_column():
+	if Input.is_action_just_pressed("to_left_line"):
+		if columnIndex - 1 >= 0:
+			_move_bethween_columns(-1)
+	elif  Input.is_action_just_pressed("to_right_line"):
+		if columnIndex + 1 <= toColumn.size() - 1:
+			_move_bethween_columns(1)
 
-func _move_player_down():
-	if Input.is_action_just_pressed("player_down") && canStopMomentum:
-		canStopMomentum = false
-		velocity.y = 0 
+func _move_bethween_columns(index): 
+	columnIndex += index
+	position.x = toColumn[columnIndex]
 
-func _on_check_points_player_entered(Id):
-	lastCheckPoint = Id
-	onCheckPoint = true
-	playerOnCheckPoint.emit(onCheckPoint)
-	
+func _on_audio_sync_player_player_jump():
+	print(bounsTimer)
+	print(jumpId)
+	jumpId += 1
+	bounsTimer = 0
