@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgf4huwi65yu4"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_7r50t"]
+[ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_nal1i"]
+[ext_resource type="PackedScene" uid="uid://0m8xfby846rt" path="res://Prefabs/Systems/Block-Timing.tscn" id="3_r4b1x"]
+[ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="4_glsv6"]
+[ext_resource type="PackedScene" uid="uid://e6oixedv2d0i" path="res://Prefabs/Platforms/Arrow-Platform-Right.tscn" id="4_hhjhl"]
+[ext_resource type="PackedScene" uid="uid://cvht4mdxk1qof" path="res://Prefabs/Platforms/Arrow-Platform-Up.tscn" id="5_487y3"]
+[ext_resource type="PackedScene" uid="uid://cqp4i00n2gjgi" path="res://Prefabs/Platforms/Arrow-Platform-Left.tscn" id="6_eo70m"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_7r50t")
+
+[node name="AudioSyncPlayer" parent="." instance=ExtResource("2_nal1i")]
+
+[node name="BlockTiming" parent="AudioSyncPlayer" instance=ExtResource("3_r4b1x")]
+
+[node name="SectionHolder" type="Node2D" parent="."]
+
+[node name="Section 1" type="Node2D" parent="SectionHolder"]
+
+[node name="ArrowPlatformRight" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(355.912, 0)
+
+[node name="ArrowPlatformRight2" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(1198.44, 0)
+
+[node name="ArrowPlatformUp" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
+position = Vector2(2118.4, 0)
+
+[node name="ArrowPlatformRight3" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(2118.4, -2995.98)
+
+[node name="ArrowPlatformUp2" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
+position = Vector2(3945.94, -2995.98)
+sendingPlayerDirection = "down"
+
+[node name="ArrowPlatformLeft" parent="SectionHolder/Section 1" instance=ExtResource("6_eo70m")]
+position = Vector2(3945.94, 1709.91)
+
+[node name="ArrowPlatformRight4" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(-1795.02, 1709.91)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_glsv6")]
+
+[connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]

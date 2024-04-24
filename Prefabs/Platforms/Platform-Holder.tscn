@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdgn7kik8hkep"]
-
-[ext_resource type="Script" path="res://Scripts/Platform/Platform-Holder.gd" id="1_s8aae"]
-
-[node name="PlatformHolder" type="Node2D"]
-script = ExtResource("1_s8aae")

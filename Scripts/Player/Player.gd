@@ -1,85 +1,125 @@
 extends CharacterBody2D
+@export var gravity : int
 
-const maxFallVelocity = 500 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var movementSpeed : float
 
-const bounceForce : float = 680
-var canStopMomentum : bool = true 
-var bounsTimer : float = 0
+var collitionTimer = 0 
+var placeInSong = 1
+var canMove = false
+var stopGravity = false
 
-const toLineForce : int = 160
-var windowSizeX = DisplayServer.window_get_size().x
+var lastDirectionBlockInteraction
+var moveHorizontal = true
+var onDirectionBlock = false
+var moveDirection = 1
 
-var onCheckPoint : bool = true 
-var lastCheckPoint : int;
+var playerDidDirectionInput = false
+var points = 0
+var onOk = false
+var onGreat = false
+var onPerfect = false 
 
-signal playerBounce
-signal playerOnCheckPoint(onCheckPoint)
-signal playerStartedGame()
+signal startGame
 
-func _physics_process(delta):
-	if !onCheckPoint:
-		NotOnCheckPoint(delta)
-	else:
-		WhenOnCheckPoint()
-
-
-func NotOnCheckPoint(delta):
-	if velocity.y < maxFallVelocity:
-		velocity.y += 587 * delta
-		bounsTimer += delta
-	if is_on_floor():
-		print(bounsTimer)
-		bounsTimer = 0
-		canStopMomentum = true
-		playerBounce.emit()
-		velocity.y += -bounceForce
-		
-	if Input.is_action_just_pressed("to_left_line"):
-		if position.x - toLineForce >= 0:
-			_move_bethween_lines(-toLineForce)
-	elif  Input.is_action_just_pressed("to_right_line"):
-		if position.x + toLineForce <= windowSizeX:
-			_move_bethween_lines(toLineForce)
-			
-	_move_player_down()
-	move_and_slide()
-
-func WhenOnCheckPoint():
-	velocity.y = 0
-
-	if Input.is_action_just_pressed("start_player_movement"):
-		_start_game()
-
-	if Input.is_action_just_pressed("to_left_line"):
-		if position.x - toLineForce >= 0:
-			_move_bethween_lines(-toLineForce)
-	elif  Input.is_action_just_pressed("to_right_line"):
-		if position.x + toLineForce <= windowSizeX:
-			_move_bethween_lines(toLineForce)
-		
-	move_and_slide()
-
-func _start_game():
-	onCheckPoint = false
-	velocity.y += - bounceForce
-	playerBounce.emit()
-	playerOnCheckPoint.emit(onCheckPoint)
-	playerStartedGame.emit()
-
-func _move_bethween_lines(force : int): 
-	var tween = get_tree().create_tween()
-	var playerMovePosition = position.x
-	playerMovePosition += force
-	tween.tween_property(self, "position", Vector2(playerMovePosition, position.y), 0.1).set_trans(Tween.TRANS_QUAD)
-
-func _move_player_down():
-	if Input.is_action_just_pressed("player_down") && canStopMomentum:
-		canStopMomentum = false
-		velocity.y = 0 
-
-func _on_check_points_player_entered(Id):
-	lastCheckPoint = Id
-	onCheckPoint = true
-	playerOnCheckPoint.emit(onCheckPoint)
+func _process(delta):
+	if Input.is_action_just_pressed("start_input") && !canMove:
+		canMove = true
+		startGame.emit()
 	
+	if !canMove:
+		return
+	
+	_player_direction_input()
+	
+	if moveHorizontal:
+		velocity.x = movementSpeed * moveDirection
+		velocity.y = 0
+	else:
+		velocity.y = movementSpeed * moveDirection
+		velocity.x = 0
+	
+	if !stopGravity:
+		velocity.y = gravity * delta
+	
+	collitionTimer += delta
+	
+	move_and_slide()
+
+func _collide_with_direction_block(direction : String, trunOfGravity : bool):
+	match direction: 
+		"up":
+			_change_player_movement(-1, false)
+		"down": 
+			_change_player_movement(1, false)
+		"left":
+			_change_player_movement(-1, true)
+		"right":
+			_change_player_movement(1, true)
+		_: 
+			print("no direction")
+	print("change direction")
+	lastDirectionBlockInteraction = direction
+	stopGravity = trunOfGravity
+	onDirectionBlock = true
+	playerDidDirectionInput = true
+
+func _change_player_movement(direction : int, horizontal):
+	moveHorizontal = horizontal
+	moveDirection = direction
+
+func _exited_direction_block():
+	onDirectionBlock = false
+	onOk = false
+	onGreat = false
+	onPerfect = false 
+
+
+func _player_direction_input():
+	if onDirectionBlock && playerDidDirectionInput:
+		if Input.is_action_just_pressed("up_input"):
+			_dose_input_match_direction("up")
+		elif Input.is_action_just_pressed("down_input"):
+			_dose_input_match_direction("down")
+		elif Input.is_action_just_pressed("left_input"):
+			_dose_input_match_direction("left")
+		elif Input.is_action_just_pressed("right_input"):
+			_dose_input_match_direction("right")
+
+
+func _dose_input_match_direction(direction : String):
+	playerDidDirectionInput = false
+	if  direction == lastDirectionBlockInteraction:
+		_point_counter()
+	else:
+		print("Wrong input") 
+
+func _point_counter():
+	if onOk:
+		if onGreat:
+			if onPerfect:
+				points += 100
+			else: 
+				points += 50
+		else: 
+			points += 25
+	else:
+		print("no points")
+	print(points)
+
+func _on_ok_collider():
+	onOk = true
+	print("ok")
+
+func _on_great_collider():
+	onGreat = true
+	print("great")
+
+func _on_perfect_collider():
+	onPerfect = true
+	print("perfect")
+
+func _on_audio_sync_player_player_collide():
+	print(collitionTimer)
+	print(placeInSong)
+	placeInSong += 1
+	collitionTimer = 0

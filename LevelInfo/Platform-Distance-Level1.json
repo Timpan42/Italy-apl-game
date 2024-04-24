@@ -1,0 +1,272 @@
+[
+	{
+		"distance": 355.912053305016,
+		"distanceFromLastBlock": 0,
+		"id": 1,
+		"time": 2.37274702203344
+	},
+	{
+		"distance": 1198.43595330502,
+		"distanceFromLastBlock": 355.912053305016,
+		"id": 2,
+		"time": 7.98957302203344
+	},
+	{
+		"distance": 2118.40230330501,
+		"distanceFromLastBlock": 842.5239,
+		"id": 3,
+		"time": 14.1226820220334
+	},
+	{
+		"distance": 2995.98150330501,
+		"distanceFromLastBlock": 919.966349999994,
+		"id": 4,
+		"time": 19.9732100220334
+	},
+	{
+		"distance": 3945.93600330501,
+		"distanceFromLastBlock": 877.5792,
+		"id": 5,
+		"time": 26.3062400220334
+	},
+	{
+		"distance": 4705.89150330501,
+		"distanceFromLastBlock": 949.9545,
+		"id": 6,
+		"time": 31.3726100220334
+	},
+	{
+		"distance": 5740.95630330501,
+		"distanceFromLastBlock": 759.9555,
+		"id": 7,
+		"time": 38.2730420220334
+	},
+	{
+		"distance": 6548.41695330501,
+		"distanceFromLastBlock": 1035.0648,
+		"id": 8,
+		"time": 43.6561130220334
+	},
+	{
+		"distance": 7945.90320330501,
+		"distanceFromLastBlock": 807.46065,
+		"id": 9,
+		"time": 52.9726880220334
+	},
+	{
+		"distance": 8863.49775330501,
+		"distanceFromLastBlock": 1397.48625,
+		"id": 10,
+		"time": 59.0899850220334
+	},
+	{
+		"distance": 9813.37290330501,
+		"distanceFromLastBlock": 917.594549999999,
+		"id": 11,
+		"time": 65.4224860220334
+	},
+	{
+		"distance": 10658.423703305,
+		"distanceFromLastBlock": 949.87515,
+		"id": 12,
+		"time": 71.0561580220334
+	},
+	{
+		"distance": 11588.386953305,
+		"distanceFromLastBlock": 845.050800000001,
+		"id": 13,
+		"time": 77.2559130220334
+	},
+	{
+		"distance": 12470.865753305,
+		"distanceFromLastBlock": 929.963249999999,
+		"id": 14,
+		"time": 83.1391050220334
+	},
+	{
+		"distance": 13365.918003305,
+		"distanceFromLastBlock": 882.478800000001,
+		"id": 15,
+		"time": 89.1061200220334
+	},
+	{
+		"distance": 14243.447853305,
+		"distanceFromLastBlock": 895.052249999999,
+		"id": 16,
+		"time": 94.9563190220334
+	},
+	{
+		"distance": 15153.439653305,
+		"distanceFromLastBlock": 877.529850000001,
+		"id": 17,
+		"time": 101.022931022033
+	},
+	{
+		"distance": 15578.442903305,
+		"distanceFromLastBlock": 909.991799999942,
+		"id": 18,
+		"time": 103.856286022033
+	},
+	{
+		"distance": 16025.9409033049,
+		"distanceFromLastBlock": 425.00325,
+		"id": 19,
+		"time": 106.839606022033
+	},
+	{
+		"distance": 16928.424003305,
+		"distanceFromLastBlock": 447.497999999998,
+		"id": 20,
+		"time": 112.856160022033
+	},
+	{
+		"distance": 17373.4995033049,
+		"distanceFromLastBlock": 902.483100000001,
+		"id": 21,
+		"time": 115.823330022033
+	},
+	{
+		"distance": 17828.441253305,
+		"distanceFromLastBlock": 445.075499999999,
+		"id": 22,
+		"time": 118.856275022033
+	},
+	{
+		"distance": 18733.4185533049,
+		"distanceFromLastBlock": 454.941750000002,
+		"id": 23,
+		"time": 124.889457022033
+	},
+	{
+		"distance": 19178.422803305,
+		"distanceFromLastBlock": 904.977299999999,
+		"id": 24,
+		"time": 127.856152022033
+	},
+	{
+		"distance": 19625.8686033049,
+		"distanceFromLastBlock": 445.004250000002,
+		"id": 25,
+		"time": 130.839124022033
+	},
+	{
+		"distance": 20533.4353533049,
+		"distanceFromLastBlock": 447.445799999998,
+		"id": 26,
+		"time": 136.889569022033
+	},
+	{
+		"distance": 20978.4283533049,
+		"distanceFromLastBlock": 907.566749999998,
+		"id": 27,
+		"time": 139.856189022033
+	},
+	{
+		"distance": 21388.464303305,
+		"distanceFromLastBlock": 444.993000000002,
+		"id": 28,
+		"time": 142.589762022033
+	},
+	{
+		"distance": 22330.924953305,
+		"distanceFromLastBlock": 410.035950000001,
+		"id": 29,
+		"time": 148.872833022033
+	},
+	{
+		"distance": 22775.939853305,
+		"distanceFromLastBlock": 942.460650000001,
+		"id": 30,
+		"time": 151.839599022033
+	},
+	{
+		"distance": 23003.408853305,
+		"distanceFromLastBlock": 445.014900000002,
+		"id": 31,
+		"time": 153.356059022033
+	},
+	{
+		"distance": 23208.4561533049,
+		"distanceFromLastBlock": 227.468999999997,
+		"id": 32,
+		"time": 154.723041022033
+	},
+	{
+		"distance": 23435.9331033049,
+		"distanceFromLastBlock": 205.047299999998,
+		"id": 33,
+		"time": 156.239554022033
+	},
+	{
+		"distance": 23665.9626033049,
+		"distanceFromLastBlock": 227.47695,
+		"id": 34,
+		"time": 157.773084022033
+	},
+	{
+		"distance": 24133.4329533049,
+		"distanceFromLastBlock": 230.029500000001,
+		"id": 35,
+		"time": 160.889553022033
+	},
+	{
+		"distance": 24333.4318533049,
+		"distanceFromLastBlock": 467.47035,
+		"id": 36,
+		"time": 162.222879022033
+	},
+	{
+		"distance": 24553.428303305,
+		"distanceFromLastBlock": 199.998899999999,
+		"id": 37,
+		"time": 163.689522022033
+	},
+	{
+		"distance": 24770.984703305,
+		"distanceFromLastBlock": 219.996450000002,
+		"id": 38,
+		"time": 165.139898022033
+	},
+	{
+		"distance": 25015.9495533049,
+		"distanceFromLastBlock": 217.556400000001,
+		"id": 39,
+		"time": 166.772997022033
+	},
+	{
+		"distance": 25220.937303305,
+		"distanceFromLastBlock": 244.964849999997,
+		"id": 40,
+		"time": 168.139582022033
+	},
+	{
+		"distance": 26378.4555033049,
+		"distanceFromLastBlock": 204.987750000004,
+		"id": 41,
+		"time": 175.856370022033
+	},
+	{
+		"distance": 27280.943403305,
+		"distanceFromLastBlock": 1157.51819999999,
+		"id": 42,
+		"time": 181.872956022033
+	},
+	{
+		"distance": 28183.442853305,
+		"distanceFromLastBlock": 902.487900000004,
+		"id": 43,
+		"time": 187.889619022033
+	},
+	{
+		"distance": 29078.4210033049,
+		"distanceFromLastBlock": 902.499449999999,
+		"id": 44,
+		"time": 193.856140022033
+	},
+	{
+		"distance": 30095.9082033049,
+		"distanceFromLastBlock": 894.978149999999,
+		"id": 45,
+		"time": 200.639388022033
+	}
+]

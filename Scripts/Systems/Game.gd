@@ -1,56 +1,23 @@
 extends Node2D
 
-var songPositionBeats
-var onMeasure
-var maxMeasure
+var gameStarted = false
 
-var playerStarted : bool = false
-var playerOnCheckPoint : bool = false
-var songIsPlaying : bool = false
+signal startGame()
 
-var measuerLooped = 0
+func _process(delta):
+	if Input.is_action_just_pressed("escape_input"):
+		$SavePositionData._save_position_data()
+		get_tree().quit()
 
-#@onready var platformHolder = $PlatformHolder
+func _on_player_start_game():
+	gameStarted = true
+	startGame.emit()
 
-signal startSong
+func _on_audio_sync_player_is_playing():
+	pass # Replace with function body.
 
-func _process(_delta):
-	_start_song()
-	
+func _on_audio_sync_player_finished():
+	pass # Replace with function body.
 
-func _start_song():
-	if !songIsPlaying:
-		if playerStarted && !playerOnCheckPoint:
-			$Timer.start()
-			startSong.emit()
-
-func _on_audio_system_beat(songPosition):
-	songPositionBeats = songPosition 
-
-func _on_audio_system_measure(measure):
-	onMeasure = measure
-	if onMeasure == 2 || onMeasure == maxMeasure:
-		measuerLooped += 1
-	#	_instantiate_platform()
-
-func _instantiate_platform():
-#	var platformPosition = Vector2(245, (platformHolder.position.y + 250) - 290 * measuerLooped)
-#	_JSON_PLATFORM_SAVE._update_data(measuerLooped, platformPosition)
-	measuerLooped += 1
-
-func _on_audio_system_finished():
-	#_JSON_PLATFORM_SAVE._save_to_file("1")
-	print("song finished")
-
-func _on_player_player_on_check_point(onCheckPoint):
-	playerOnCheckPoint = onCheckPoint
-
-func _on_player_player_started_game():
-	playerStarted = true
-
-func _on_audio_system_song_is_playing(playing, songMeasures):
-	songIsPlaying = playing
-	maxMeasure = songMeasures
-
-func _on_timer_timeout():
-	print(measuerLooped)
+func _on_player_send_position(position):
+	$SavePositionData._update_data(position)

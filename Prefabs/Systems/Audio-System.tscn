@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi8yyo2t1bwqr"]
-
-[ext_resource type="Script" path="res://Scripts/Systems/Audio-System.gd" id="1_m8ugt"]
-
-[node name="AudioSystem" type="AudioStreamPlayer"]
-bus = &"Music"
-script = ExtResource("1_m8ugt")
