@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpuaoe7gaadu"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Position-Data.gd" id="1_4bls2"]
+[ext_resource type="Script" path="res://Scripts/Systems/Json-Block-Timing.gd" id="4_hxdf2"]
+
+[node name="BlockPositionCalculator" type="Node"]
+script = ExtResource("1_4bls2")
+fileName = "Level1"
+velocity = 150.0
+
+[node name="BlockTiming" type="Node" parent="."]
+script = ExtResource("4_hxdf2")
+fileName = "res://LevelInfo/Level1.json"
+
+[connection signal="startProgram" from="." to="BlockTiming" method="_on_block_position_calculator_start_program"]
+[connection signal="dataReady" from="BlockTiming" to="." method="_on_block_timing_data_ready"]

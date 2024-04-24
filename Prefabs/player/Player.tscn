@@ -8,10 +8,12 @@
 shader = ExtResource("1_33nd7")
 shader_parameter/corner_scale = 1.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_48k4f"]
-radius = 64.846
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akn0j"]
+radius = 16.0
+height = 126.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 collision_mask = 2
 slide_on_ceiling = false
 script = ExtResource("1_8h46b")
@@ -21,4 +23,8 @@ material = SubResource("ShaderMaterial_bd2fk")
 texture = ExtResource("2_604be")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_48k4f")
+shape = SubResource("CapsuleShape2D_akn0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true

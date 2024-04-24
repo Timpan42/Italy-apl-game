@@ -17,7 +17,7 @@ var data : Array
 @export var startIndex : int
 var dataIndex = 0
 
-signal playerJump()
+signal playerCollide()
 
 # Used by system clock.
 var time_begin
@@ -39,14 +39,26 @@ func _process(_delta):
 	seconds = time
 	
 	if seconds >= data[dataIndex]:
-		playerJump.emit()
+		playerCollide.emit()
 		dataIndex += 1
 
-func _on_test_camra_move_start_game():
+func _on_changingamedirection_start_game():
 	sync_source = SyncSource.SYSTEM_CLOCK
 	time_begin = Time.get_ticks_usec()
 	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
-	data = $"../LoadJumpData"._load_level_data("time")
+	data = $BlockTiming._load_level_data("time")
+	dataIndex = startIndex
+	if dataIndex != 0:
+		play(data[dataIndex - 1])
+	else:
+		play()
+	isPlaying.emit()
+
+func _on_game_manager_start_game():
+	sync_source = SyncSource.SYSTEM_CLOCK
+	time_begin = Time.get_ticks_usec()
+	time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
+	data = $BlockTiming._load_level_data("time")
 	dataIndex = startIndex
 	if dataIndex != 0:
 		play(data[dataIndex - 1])

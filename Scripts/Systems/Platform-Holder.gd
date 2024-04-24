@@ -1,11 +1,6 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _animate_down():
+	var tween = create_tween()
+	for platforms in get_children():
+		tween.tween_property(platforms, "position", Vector2(0, self.position.y-100), 2).set_trans(Tween.TRANS_QUAD)

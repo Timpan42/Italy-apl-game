@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0m8xfby846rt"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Json-Block-Timing.gd" id="1_cqgjn"]
+
+[node name="BlockTiming" type="Node"]
+script = ExtResource("1_cqgjn")
