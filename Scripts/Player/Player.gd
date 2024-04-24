@@ -6,7 +6,7 @@ extends CharacterBody2D
 var collitionTimer = 0 
 var placeInSong = 1
 var canMove = false
-var stopGravity = false
+var stopGravity = true
 
 var lastDirectionBlockInteraction
 var moveHorizontal = true
@@ -18,6 +18,9 @@ var points = 0
 var onOk = false
 var onGreat = false
 var onPerfect = false 
+
+var moveTimer = 0
+var moveTime = true
 
 signal startGame
 
@@ -41,6 +44,12 @@ func _process(delta):
 	if !stopGravity:
 		velocity.y = gravity * delta
 	
+	if position.x > 720 && moveTime:
+		print(moveTimer)
+		moveTime = false
+	else:
+		moveTimer += delta
+	
 	collitionTimer += delta
 	
 	move_and_slide()
@@ -57,7 +66,6 @@ func _collide_with_direction_block(direction : String, trunOfGravity : bool):
 			_change_player_movement(1, true)
 		_: 
 			print("no direction")
-	print("change direction")
 	lastDirectionBlockInteraction = direction
 	stopGravity = trunOfGravity
 	onDirectionBlock = true
@@ -108,15 +116,15 @@ func _point_counter():
 
 func _on_ok_collider():
 	onOk = true
-	print("ok")
+
 
 func _on_great_collider():
 	onGreat = true
-	print("great")
+
 
 func _on_perfect_collider():
 	onPerfect = true
-	print("perfect")
+
 
 func _on_audio_sync_player_player_collide():
 	print(collitionTimer)

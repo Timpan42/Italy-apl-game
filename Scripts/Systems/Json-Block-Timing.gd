@@ -6,7 +6,7 @@ signal dataReady(data)
 
 func _load_level_data(dataReturn : String):
 	var file = FileAccess.open(fileName, FileAccess.READ)
-	if file == null:
+	if file == null || fileName == "":
 		print("no file")
 		return
 

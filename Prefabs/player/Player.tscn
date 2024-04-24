@@ -12,7 +12,7 @@ shader_parameter/corner_scale = 1.0
 radius = 16.0
 height = 126.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 slide_on_ceiling = false

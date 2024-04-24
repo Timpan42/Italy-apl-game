@@ -27,13 +27,13 @@ func _calculate_position():
 	_save_file()
 
 func save_position(distance : float, time):
+	distanceFromLastBlock = distance - lastBlock
 	var distanceData : Dictionary = {
 		"id" : id,
 		"distance" : distance,
 		"distanceFromLastBlock" : distanceFromLastBlock,
 		"time" : time
 	}
-	distanceFromLastBlock = distance - lastBlock
 	lastBlock = distance
 	id += 1
 	data.append(distanceData)
