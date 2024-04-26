@@ -1,48 +1,271 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgf4huwi65yu4"]
+[gd_scene load_steps=11 format=3 uid="uid://bgf4huwi65yu4"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_7r50t"]
 [ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_nal1i"]
+[ext_resource type="AudioStream" uid="uid://daqe7ar7ef6bu" path="res://Assets/Music/SadMusic2018-12-29_-_Cold_Isolation_-_David_Fesliyan.mp3" id="3_qe45s"]
 [ext_resource type="PackedScene" uid="uid://0m8xfby846rt" path="res://Prefabs/Systems/Block-Timing.tscn" id="3_r4b1x"]
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="4_glsv6"]
 [ext_resource type="PackedScene" uid="uid://e6oixedv2d0i" path="res://Prefabs/Platforms/Arrow-Platform-Right.tscn" id="4_hhjhl"]
 [ext_resource type="PackedScene" uid="uid://cvht4mdxk1qof" path="res://Prefabs/Platforms/Arrow-Platform-Up.tscn" id="5_487y3"]
+[ext_resource type="PackedScene" uid="uid://wtebfil78odi" path="res://Prefabs/Platforms/Base-Platform.tscn" id="5_eowxv"]
 [ext_resource type="PackedScene" uid="uid://cqp4i00n2gjgi" path="res://Prefabs/Platforms/Arrow-Platform-Left.tscn" id="6_eo70m"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_d14as"]
+
 [node name="Level1" type="Node2D"]
+
+[node name="Background" type="MeshInstance2D" parent="."]
+modulate = Color(0.180392, 0.317647, 0.447059, 0.631373)
+scale = Vector2(11895, 6790)
+mesh = SubResource("QuadMesh_d14as")
+metadata/_edit_lock_ = true
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("1_7r50t")
 
 [node name="AudioSyncPlayer" parent="." instance=ExtResource("2_nal1i")]
+stream = ExtResource("3_qe45s")
 
 [node name="BlockTiming" parent="AudioSyncPlayer" instance=ExtResource("3_r4b1x")]
+fileName = "res://LevelInfo/Level1.json"
 
 [node name="SectionHolder" type="Node2D" parent="."]
 
+[node name="FillerPlatformts 1" type="Node2D" parent="SectionHolder"]
+
+[node name="Wall" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(-165, -100)
+rotation = 1.5708
+scale = Vector2(4, 0.7)
+
+[node name="floor" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(93, 72)
+scale = Vector2(4, 0.7)
+
+[node name="floor2" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(765, 72)
+scale = Vector2(8, 0.7)
+
+[node name="floor3" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(1669, 72)
+scale = Vector2(8, 0.7)
+
+[node name="Wall2" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2195, -156)
+rotation = 4.71239
+scale = Vector2(5, 0.7)
+
+[node name="floor5" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2928, 108.5)
+scale = Vector2(1.8, 0.7)
+
+[node name="Wall3" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2774, -148)
+rotation = -1.5708
+scale = Vector2(5.5, 0.7)
+
+[node name="floor4" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2491, -489)
+scale = Vector2(6, 0.7)
+
 [node name="Section 1" type="Node2D" parent="SectionHolder"]
 
-[node name="ArrowPlatformRight" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
-position = Vector2(355.912, 0)
+[node name="Right 1" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(355.912, 72)
 
-[node name="ArrowPlatformRight2" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
-position = Vector2(1198.44, 0)
+[node name="Right2" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(1198.44, 72)
 
-[node name="ArrowPlatformUp" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
-position = Vector2(2118.4, 0)
+[node name="Up 3" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
+position = Vector2(2118.4, 72)
 
-[node name="ArrowPlatformRight3" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
-position = Vector2(2118.4, -2995.98)
+[node name="Left 4" parent="SectionHolder/Section 1" instance=ExtResource("6_eo70m")]
+position = Vector2(2118.4, -877.579)
+rotation = 3.14159
+sendingPlayerDirection = "right"
 
-[node name="ArrowPlatformUp2" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
-position = Vector2(3945.94, -2995.98)
+[node name="Up 5" parent="SectionHolder/Section 1" instance=ExtResource("5_487y3")]
+position = Vector2(3068.36, -877.579)
+rotation = 3.14159
 sendingPlayerDirection = "down"
 
-[node name="ArrowPlatformLeft" parent="SectionHolder/Section 1" instance=ExtResource("6_eo70m")]
-position = Vector2(3945.94, 1709.91)
+[node name="Right 6" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(3068.36, 108.377)
 
-[node name="ArrowPlatformRight4" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
-position = Vector2(-1795.02, 1709.91)
+[node name="Left 7" parent="SectionHolder/Section 1" instance=ExtResource("6_eo70m")]
+position = Vector2(4175.42, 36.377)
+rotation = 4.71239
+sendingPlayerDirection = "down"
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_glsv6")]
+[node name="Left 8" parent="SectionHolder/Section 1" instance=ExtResource("6_eo70m")]
+position = Vector2(4133.42, 915.838)
 
+[node name="Right 9" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(2653.94, 843.838)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Right 10" parent="SectionHolder/Section 1" instance=ExtResource("4_hhjhl")]
+position = Vector2(2695.94, 1761.43)
+
+[node name="Section 2" type="Node2D" parent="SectionHolder"]
+
+[node name="Right 1" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(3645.81, 1761.43)
+
+[node name="Right 2" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(4490.86, 1761.43)
+
+[node name="Right 3" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(5492.82, 1701.43)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right 4" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(5492.82, 818.954)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right 5" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(5492.82, -76.098)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right 6" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(5452.82, -941.15)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Left 7" parent="SectionHolder/Section 2" instance=ExtResource("6_eo70m")]
+position = Vector2(4470.83, -881.125)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Left 8" parent="SectionHolder/Section 2" instance=ExtResource("6_eo70m")]
+position = Vector2(4520.83, -1378.13)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Up 9" parent="SectionHolder/Section 2" instance=ExtResource("5_487y3")]
+position = Vector2(4978.33, -1296.13)
+
+[node name="Right 10" parent="SectionHolder/Section 2" instance=ExtResource("4_hhjhl")]
+position = Vector2(4978.33, -2248.61)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Section 3" type="Node2D" parent="SectionHolder"]
+
+[node name="Left 1" parent="SectionHolder/Section 3" instance=ExtResource("6_eo70m")]
+position = Vector2(4441.25, -2176.61)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Right 2" parent="SectionHolder/Section 3" instance=ExtResource("4_hhjhl")]
+position = Vector2(4493.25, -2681.55)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Right 3" parent="SectionHolder/Section 3" instance=ExtResource("4_hhjhl")]
+position = Vector2(3536.28, -2619.55)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Left 4" parent="SectionHolder/Section 3" instance=ExtResource("6_eo70m")]
+position = Vector2(3588.28, -2096.55)
+
+[node name="Left 5" parent="SectionHolder/Section 3" instance=ExtResource("6_eo70m")]
+position = Vector2(3140.83, -2096.55)
+
+[node name="Left 6" parent="SectionHolder/Section 3" instance=ExtResource("6_eo70m")]
+position = Vector2(2233.26, -2096.55)
+
+[node name="Right 7" parent="SectionHolder/Section 3" instance=ExtResource("4_hhjhl")]
+position = Vector2(1716.27, -2156.55)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Left 8" parent="SectionHolder/Section 3" instance=ExtResource("6_eo70m")]
+position = Vector2(1766.27, -1674.51)
+
+[node name="Right 9" parent="SectionHolder/Section 3" instance=ExtResource("4_hhjhl")]
+position = Vector2(751.811, -1724.51)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Right 10" parent="SectionHolder/Section 3" instance=ExtResource("4_hhjhl")]
+position = Vector2(751.811, -1279.5)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Section 4" type="Node2D" parent="SectionHolder"]
+
+[node name="Left 1" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(801.811, -980.028)
+
+[node name="Left 2" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(596.764, -980.028)
+
+[node name="Left 3" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(297.287, -1040.03)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Left 4" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(297.287, -1270.06)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Up 5" parent="SectionHolder/Section 4" instance=ExtResource("5_487y3")]
+position = Vector2(369.287, -1737.53)
+rotation = 4.71239
+sendingPlayerDirection = "left"
+
+[node name="Right 6" parent="SectionHolder/Section 4" instance=ExtResource("4_hhjhl")]
+position = Vector2(87.288, -1737.53)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Left 7" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(137.288, -1425.53)
+
+[node name="Left 8" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(-80.268, -1425.53)
+
+[node name="Left 9" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(-325.233, -1425.53)
+
+[node name="Left 10" parent="SectionHolder/Section 4" instance=ExtResource("6_eo70m")]
+position = Vector2(-530.221, -1425.53)
+
+[node name="Section 5" type="Node2D" parent="SectionHolder"]
+
+[node name="Left 1" parent="SectionHolder/Section 5" instance=ExtResource("6_eo70m")]
+position = Vector2(-1749.74, -1485.53)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Right 2" parent="SectionHolder/Section 5" instance=ExtResource("4_hhjhl")]
+position = Vector2(-1689.74, -2440.02)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Right 3" parent="SectionHolder/Section 5" instance=ExtResource("4_hhjhl")]
+position = Vector2(-2644.24, -2390.02)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Left 4" parent="SectionHolder/Section 5" instance=ExtResource("6_eo70m")]
+position = Vector2(-2604.24, -1495.04)
+
+[node name="Left 5" parent="SectionHolder/Section 5" instance=ExtResource("6_eo70m")]
+position = Vector2(-3631.73, -1505.04)
+
+[node name="Player" parent="." instance=ExtResource("4_glsv6")]
+gravity = 980
+movementSpeed = 150.0
+
+[connection signal="changePlayerStartPosition" from="GameManager" to="Player" method="_on_game_manager_change_player_start_position"]
 [connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]
+[connection signal="playerCollide" from="AudioSyncPlayer" to="Player" method="_on_audio_sync_player_player_collide"]
+[connection signal="startGame" from="Player" to="GameManager" method="_on_player_start_game"]
