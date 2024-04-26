@@ -9,7 +9,7 @@ shader = ExtResource("1_33nd7")
 shader_parameter/corner_scale = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akn0j"]
-radius = 16.0
+radius = 22.0
 height = 126.0
 
 [node name="Player" type="CharacterBody2D"]

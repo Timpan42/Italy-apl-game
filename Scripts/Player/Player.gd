@@ -3,8 +3,6 @@ extends CharacterBody2D
 
 @export var movementSpeed : float
 
-var collitionTimer = 0 
-var placeInSong = 1
 var canMove = false
 var stopGravity = true
 
@@ -49,8 +47,6 @@ func _process(delta):
 		moveTime = false
 	else:
 		moveTimer += delta
-	
-	collitionTimer += delta
 	
 	move_and_slide()
 
@@ -126,8 +122,11 @@ func _on_perfect_collider():
 	onPerfect = true
 
 
-func _on_audio_sync_player_player_collide():
-	print(collitionTimer)
-	print(placeInSong)
-	placeInSong += 1
-	collitionTimer = 0
+func _on_audio_sync_player_player_collide(dataIndex : int, seconds: float):
+	print(seconds)
+	print(dataIndex)
+
+func _on_game_manager_change_player_start_position(pos, direction, turnOfGravity):
+	position = pos
+	_collide_with_direction_block(direction, turnOfGravity)
+	
