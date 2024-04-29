@@ -477,6 +477,7 @@ position = Vector2(-3631.73, -1495.04)
 [node name="Player" parent="." instance=ExtResource("4_glsv6")]
 gravity = 980
 movementSpeed = 150.0
+cirecleIncloseTimer = 0.0
 
 [connection signal="changePlayerStartPosition" from="GameManager" to="Player" method="_on_game_manager_change_player_start_position"]
 [connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]
