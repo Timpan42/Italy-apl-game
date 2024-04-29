@@ -33,14 +33,29 @@ fileName = "res://LevelInfo/Level1.json"
 
 [node name="FillerPlatformts 1" type="Node2D" parent="SectionHolder"]
 
+[node name="floor" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(93, 72)
+scale = Vector2(4, 0.7)
+
+[node name="floor9" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(824, -272)
+rotation = 3.14159
+scale = Vector2(17, 0.7)
+
 [node name="Wall" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
 position = Vector2(-165, -100)
 rotation = 1.5708
 scale = Vector2(4, 0.7)
 
-[node name="floor" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
-position = Vector2(93, 72)
-scale = Vector2(4, 0.7)
+[node name="floor10" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(1910, -877.5)
+rotation = 3.14159
+scale = Vector2(3.6, 0.7)
+
+[node name="Wall6" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(1740, -581)
+rotation = 1.5708
+scale = Vector2(6.21, 0.7)
 
 [node name="floor2" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
 position = Vector2(765, 72)
@@ -67,6 +82,204 @@ scale = Vector2(5.5, 0.7)
 [node name="floor4" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
 position = Vector2(2491, -489)
 scale = Vector2(6, 0.7)
+
+[node name="floor8" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2582, -877.5)
+rotation = 3.14159
+scale = Vector2(8, 0.7)
+
+[node name="floor11" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3666, -877.5)
+rotation = 3.14159
+scale = Vector2(10, 0.7)
+
+[node name="floor6" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3529, 108)
+scale = Vector2(7.5, 0.7)
+
+[node name="floor7" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3273, 634)
+scale = Vector2(11.5, 0.7)
+
+[node name="Wall4" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3897, 374)
+rotation = -1.5708
+scale = Vector2(5.5, 0.7)
+
+[node name="Wall5" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(2654, 1069)
+rotation = 1.5708
+scale = Vector2(8.5, 0.7)
+
+[node name="Wall7" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(4175.5, -115)
+rotation = -1.5708
+scale = Vector2(14.5, 0.7)
+
+[node name="floor12" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3594, 915.85)
+scale = Vector2(10, 0.7)
+
+[node name="floor13" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3945, 1273)
+scale = Vector2(16, 0.7)
+
+[node name="Wall8" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
+position = Vector2(3084, 1101)
+rotation = 1.5708
+scale = Vector2(4, 0.7)
+
+[node name="FillerPlatformts 2" type="Node2D" parent="SectionHolder"]
+
+[node name="floor11" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(4615, -420)
+rotation = -3.14159
+scale = Vector2(3.5, 0.7)
+
+[node name="Wall9" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(4790.8, 426)
+rotation = -1.5708
+scale = Vector2(16, 0.7)
+
+[node name="floor8" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(3937, 1761.5)
+scale = Vector2(21.5, 0.7)
+
+[node name="Wall6" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(5492.8, 491)
+rotation = -1.5708
+scale = Vector2(21, 0.7)
+
+[node name="floor9" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(5051, -941.1)
+rotation = 3.14159
+scale = Vector2(6.5, 0.7)
+
+[node name="Wall7" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(4471, -1088)
+rotation = 1.5708
+scale = Vector2(3, 0.7)
+
+[node name="Wall10" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(4471, -632)
+rotation = 1.5708
+scale = Vector2(4.5, 0.7)
+
+[node name="floor10" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(4699, -1378.15)
+rotation = -3.14159
+scale = Vector2(2.5, 0.7)
+
+[node name="Wall8" parent="SectionHolder/FillerPlatformts 2" instance=ExtResource("5_eowxv")]
+position = Vector2(5057, -1665)
+rotation = -1.5708
+scale = Vector2(7.5, 0.7)
+
+[node name="FillerPlatformts 3" type="Node2D" parent="SectionHolder"]
+
+[node name="floor11" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(4771, -2248.6)
+rotation = -3.14159
+scale = Vector2(3, 0.7)
+
+[node name="Wall9" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(4441.25, -2351)
+rotation = 1.5708
+scale = Vector2(3, 0.7)
+
+[node name="floor12" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(4072, -2681.55)
+rotation = -3.14159
+scale = Vector2(7, 0.7)
+
+[node name="floor15" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(2617, -2605)
+rotation = -3.14159
+scale = Vector2(16, 0.7)
+
+[node name="Wall10" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(3536.3, -2429)
+rotation = 1.5708
+scale = Vector2(3.5, 0.7)
+
+[node name="floor13" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(2738, -2096.5)
+scale = Vector2(14.5, 0.7)
+
+[node name="Wall11" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(1716.2, -1996)
+rotation = 1.5708
+scale = Vector2(3, 0.7)
+
+[node name="Wall13" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(1716.2, -2406)
+rotation = 1.5708
+scale = Vector2(4.5, 0.7)
+
+[node name="floor14" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(1339, -1674.5)
+scale = Vector2(7.5, 0.7)
+
+[node name="Wall12" parent="SectionHolder/FillerPlatformts 3" instance=ExtResource("5_eowxv")]
+position = Vector2(751.8, -1446)
+rotation = 1.5708
+scale = Vector2(5.5, 0.7)
+
+[node name="FillerPlatformts 4" type="Node2D" parent="SectionHolder"]
+
+[node name="floor15" parent="SectionHolder/FillerPlatformts 4" instance=ExtResource("5_eowxv")]
+position = Vector2(594, -980)
+scale = Vector2(3, 0.7)
+
+[node name="Wall13" parent="SectionHolder/FillerPlatformts 4" instance=ExtResource("5_eowxv")]
+position = Vector2(297.2, -1324)
+rotation = 1.5708
+scale = Vector2(5, 0.7)
+
+[node name="floor16" parent="SectionHolder/FillerPlatformts 4" instance=ExtResource("5_eowxv")]
+position = Vector2(-307, -1816)
+rotation = 3.14159
+scale = Vector2(18, 0.7)
+
+[node name="Wall14" parent="SectionHolder/FillerPlatformts 4" instance=ExtResource("5_eowxv")]
+position = Vector2(751.8, -1813)
+rotation = 1.5708
+scale = Vector2(1, 0.7)
+
+[node name="floor17" parent="SectionHolder/FillerPlatformts 4" instance=ExtResource("5_eowxv")]
+position = Vector2(-203, -1425.5)
+scale = Vector2(6, 0.7)
+
+[node name="FillerPlatformts 5" type="Node2D" parent="SectionHolder"]
+
+[node name="Wall14" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-1749.8, -1878)
+rotation = 1.5708
+scale = Vector2(6.3, 0.7)
+
+[node name="floor18" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-2094, -2440)
+rotation = 3.14159
+scale = Vector2(6.5, 0.7)
+
+[node name="floor20" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-1453, -2440)
+rotation = 3.14159
+scale = Vector2(4, 0.7)
+
+[node name="Wall16" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-1268, -2134)
+rotation = 1.5708
+scale = Vector2(6.38, 0.7)
+
+[node name="Wall15" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-2644.3, -2002)
+rotation = 1.5708
+scale = Vector2(6.2, 0.7)
+
+[node name="floor19" parent="SectionHolder/FillerPlatformts 5" instance=ExtResource("5_eowxv")]
+position = Vector2(-3091, -1495)
+scale = Vector2(9, 0.7)
 
 [node name="Section 1" type="Node2D" parent="SectionHolder"]
 
@@ -259,7 +472,7 @@ sendingPlayerDirection = "down"
 position = Vector2(-2604.24, -1495.04)
 
 [node name="Left 5" parent="SectionHolder/Section 5" instance=ExtResource("6_eo70m")]
-position = Vector2(-3631.73, -1505.04)
+position = Vector2(-3631.73, -1495.04)
 
 [node name="Player" parent="." instance=ExtResource("4_glsv6")]
 gravity = 980
