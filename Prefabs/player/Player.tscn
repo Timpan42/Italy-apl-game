@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drfmlmppfhnvv"]
+[gd_scene load_steps=7 format=3 uid="uid://drfmlmppfhnvv"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_8h46b"]
 [ext_resource type="Shader" path="res://Shaders/RoundObject.gdshader" id="1_33nd7"]
 [ext_resource type="Texture2D" uid="uid://cvuebpllh8hro" path="res://Assets/icon.svg" id="2_604be"]
+[ext_resource type="Texture2D" uid="uid://d4niseypywdm6" path="res://Assets/circle.png" id="4_8qvgr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bd2fk"]
 shader = ExtResource("1_33nd7")
@@ -28,3 +29,7 @@ shape = SubResource("CapsuleShape2D_akn0j")
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="Circle" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_8qvgr")

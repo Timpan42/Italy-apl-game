@@ -1,7 +1,9 @@
 extends CharacterBody2D
 @export var gravity : int
-
 @export var movementSpeed : float
+
+@onready var getCircle = $Circle
+@export var cirecleIncloseTimer : float
 
 var canMove = false
 var stopGravity = true
@@ -50,8 +52,23 @@ func _process(delta):
 	
 	move_and_slide()
 
-func _collide_with_direction_block(direction : String, trunOfGravity : bool):
-	match direction: 
+
+func _collide_with_direction_block(direction : String):
+	lastDirectionBlockInteraction = direction
+	onDirectionBlock = true
+	playerDidDirectionInput = true
+	_inclose_circle()
+
+func _inclose_circle():
+	var tween = get_tree().create_tween()
+	getCircle.scale = Vector2(0,0)
+	getCircle.visible = true
+	tween.tween_property(getCircle, "scale" ,Vector2(0.7,0.7), cirecleIncloseTimer)
+	await tween.finished
+	getCircle.visible = false
+
+func _send_direction(trunOfGravity : bool):
+	match lastDirectionBlockInteraction: 
 		"up":
 			_change_player_movement(-1, false)
 		"down": 
@@ -62,10 +79,7 @@ func _collide_with_direction_block(direction : String, trunOfGravity : bool):
 			_change_player_movement(1, true)
 		_: 
 			print("no direction")
-	lastDirectionBlockInteraction = direction
 	stopGravity = trunOfGravity
-	onDirectionBlock = true
-	playerDidDirectionInput = true
 
 func _change_player_movement(direction : int, horizontal):
 	moveHorizontal = horizontal
@@ -98,14 +112,12 @@ func _dose_input_match_direction(direction : String):
 		print("Wrong input") 
 
 func _point_counter():
-	if onOk:
-		if onGreat:
-			if onPerfect:
-				points += 100
-			else: 
-				points += 50
-		else: 
-			points += 25
+	if onPerfect:
+		points += 100
+	elif onGreat:
+		points += 50
+	elif onOk:
+		points += 25
 	else:
 		print("no points")
 	print(points)
@@ -128,5 +140,6 @@ func _on_audio_sync_player_player_collide(dataIndex : int, seconds: float):
 
 func _on_game_manager_change_player_start_position(pos, direction, turnOfGravity):
 	position = pos
-	_collide_with_direction_block(direction, turnOfGravity)
+	lastDirectionBlockInteraction = direction
+	_send_direction(turnOfGravity)
 	

@@ -1,0 +1,1001 @@
+[
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 1,
+			"lastPlatform": 0,
+			"maxTimer": 131.304000854492,
+			"time": 0.379568020351633
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 2,
+			"lastPlatform": 0.433371,
+			"maxTimer": 131.304000854492,
+			"time": 0.812939020351633
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 3,
+			"lastPlatform": 0.417097,
+			"maxTimer": 131.304000854492,
+			"time": 1.23003602035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 4,
+			"lastPlatform": 0.433205,
+			"maxTimer": 131.304000854492,
+			"time": 1.66324102035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 5,
+			"lastPlatform": 0.399853,
+			"maxTimer": 131.304000854492,
+			"time": 2.06309402035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 6,
+			"lastPlatform": 0.383315,
+			"maxTimer": 131.304000854492,
+			"time": 2.44640902035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 7,
+			"lastPlatform": 0.367262,
+			"maxTimer": 131.304000854492,
+			"time": 2.81367102035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 8,
+			"lastPlatform": 0.38269,
+			"maxTimer": 131.304000854492,
+			"time": 3.19636102035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 9,
+			"lastPlatform": 0.366994,
+			"maxTimer": 131.304000854492,
+			"time": 3.56335502035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 10,
+			"lastPlatform": 0.366533,
+			"maxTimer": 131.304000854492,
+			"time": 3.92988802035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 11,
+			"lastPlatform": 0.349741,
+			"maxTimer": 131.304000854492,
+			"time": 4.27962902035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 12,
+			"lastPlatform": 0.366824,
+			"maxTimer": 131.304000854492,
+			"time": 4.64645302035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 13,
+			"lastPlatform": 0.400492,
+			"maxTimer": 131.304000854492,
+			"time": 5.04694502035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 14,
+			"lastPlatform": 0.349348,
+			"maxTimer": 131.304000854492,
+			"time": 5.39629302035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 15,
+			"lastPlatform": 0.40046,
+			"maxTimer": 131.304000854492,
+			"time": 5.79675302035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 16,
+			"lastPlatform": 0.366446000000001,
+			"maxTimer": 131.304000854492,
+			"time": 6.16319902035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 17,
+			"lastPlatform": 1.099779,
+			"maxTimer": 131.304000854492,
+			"time": 7.26297802035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 18,
+			"lastPlatform": 1.917024,
+			"maxTimer": 131.304000854492,
+			"time": 9.18000202035163
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 19,
+			"lastPlatform": 1.049782,
+			"maxTimer": 131.304000854492,
+			"time": 10.2297840203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 20,
+			"lastPlatform": 1.900317,
+			"maxTimer": 131.304000854492,
+			"time": 12.1301010203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 21,
+			"lastPlatform": 1.133033,
+			"maxTimer": 131.304000854492,
+			"time": 13.2631340203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 22,
+			"lastPlatform": 1.933537,
+			"maxTimer": 131.304000854492,
+			"time": 15.1966710203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 23,
+			"lastPlatform": 1.083047,
+			"maxTimer": 131.304000854492,
+			"time": 16.2797180203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 24,
+			"lastPlatform": 1.866663,
+			"maxTimer": 131.304000854492,
+			"time": 18.1463810203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 25,
+			"lastPlatform": 1.099586,
+			"maxTimer": 131.304000854492,
+			"time": 19.2459670203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 26,
+			"lastPlatform": 1.933666,
+			"maxTimer": 131.304000854492,
+			"time": 21.1796330203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 27,
+			"lastPlatform": 1.033305,
+			"maxTimer": 131.304000854492,
+			"time": 22.2129380203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 28,
+			"lastPlatform": 1.916621,
+			"maxTimer": 131.304000854492,
+			"time": 24.1295590203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 29,
+			"lastPlatform": 1.150024,
+			"maxTimer": 131.304000854492,
+			"time": 25.2795830203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 30,
+			"lastPlatform": 1.849396,
+			"maxTimer": 131.304000854492,
+			"time": 27.1289790203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 31,
+			"lastPlatform": 1.11729,
+			"maxTimer": 131.304000854492,
+			"time": 28.2462690203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 32,
+			"lastPlatform": 5.000445,
+			"maxTimer": 131.304000854492,
+			"time": 33.2467140203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 33,
+			"lastPlatform": 0.999625999999999,
+			"maxTimer": 131.304000854492,
+			"time": 34.2463400203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 34,
+			"lastPlatform": 1.833079,
+			"maxTimer": 131.304000854492,
+			"time": 36.0794190203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 35,
+			"lastPlatform": 1.14963700000001,
+			"maxTimer": 131.304000854492,
+			"time": 37.2290560203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 36,
+			"lastPlatform": 1.967163,
+			"maxTimer": 131.304000854492,
+			"time": 39.1962190203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 37,
+			"lastPlatform": 1.083237,
+			"maxTimer": 131.304000854492,
+			"time": 40.2794560203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 38,
+			"lastPlatform": 1.883564,
+			"maxTimer": 131.304000854492,
+			"time": 42.1630200203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 39,
+			"lastPlatform": 1.099885,
+			"maxTimer": 131.304000854492,
+			"time": 43.2629050203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 40,
+			"lastPlatform": 1.900275,
+			"maxTimer": 131.304000854492,
+			"time": 45.1631800203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 41,
+			"lastPlatform": 1.083027,
+			"maxTimer": 131.304000854492,
+			"time": 46.2462070203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 42,
+			"lastPlatform": 1.86659,
+			"maxTimer": 131.304000854492,
+			"time": 48.1127970203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 43,
+			"lastPlatform": 1.166557,
+			"maxTimer": 131.304000854492,
+			"time": 49.2793540203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 44,
+			"lastPlatform": 1.883529,
+			"maxTimer": 131.304000854492,
+			"time": 51.1628830203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 45,
+			"lastPlatform": 1.11663,
+			"maxTimer": 131.304000854492,
+			"time": 52.2795130203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 46,
+			"lastPlatform": 1.86688700000001,
+			"maxTimer": 131.304000854492,
+			"time": 54.1464000203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 47,
+			"lastPlatform": 1.183065,
+			"maxTimer": 131.304000854492,
+			"time": 55.3294650203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 48,
+			"lastPlatform": 4.949991,
+			"maxTimer": 131.304000854492,
+			"time": 60.2794560203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 49,
+			"lastPlatform": 0.967143999999998,
+			"maxTimer": 131.304000854492,
+			"time": 61.2466000203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 50,
+			"lastPlatform": 1.916252,
+			"maxTimer": 131.304000854492,
+			"time": 63.1628520203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 51,
+			"lastPlatform": 1.06661400000001,
+			"maxTimer": 131.304000854492,
+			"time": 64.2294660203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 52,
+			"lastPlatform": 1.9336,
+			"maxTimer": 131.304000854492,
+			"time": 66.1630660203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 53,
+			"lastPlatform": 1.099625,
+			"maxTimer": 131.304000854492,
+			"time": 67.2626910203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 54,
+			"lastPlatform": 1.933431,
+			"maxTimer": 131.304000854492,
+			"time": 69.1961220203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 55,
+			"lastPlatform": 1.066774,
+			"maxTimer": 131.304000854492,
+			"time": 70.2628960203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 56,
+			"lastPlatform": 1.933091,
+			"maxTimer": 131.304000854492,
+			"time": 72.1959870203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 57,
+			"lastPlatform": 1.067323,
+			"maxTimer": 131.304000854492,
+			"time": 73.2633100203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 58,
+			"lastPlatform": 1.89927400000001,
+			"maxTimer": 131.304000854492,
+			"time": 75.1625840203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 59,
+			"lastPlatform": 1.15024899999999,
+			"maxTimer": 131.304000854492,
+			"time": 76.3128330203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 60,
+			"lastPlatform": 1.81696000000001,
+			"maxTimer": 131.304000854492,
+			"time": 78.1297930203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 61,
+			"lastPlatform": 1.216352,
+			"maxTimer": 131.304000854492,
+			"time": 79.3461450203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 62,
+			"lastPlatform": 1.816608,
+			"maxTimer": 131.304000854492,
+			"time": 81.1627530203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 63,
+			"lastPlatform": 1.233227,
+			"maxTimer": 131.304000854492,
+			"time": 82.3959800203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 64,
+			"lastPlatform": 4.91681799999999,
+			"maxTimer": 131.304000854492,
+			"time": 87.3127980203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 65,
+			"lastPlatform": 0.416928999999996,
+			"maxTimer": 131.304000854492,
+			"time": 87.7297270203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 66,
+			"lastPlatform": 0.433095000000009,
+			"maxTimer": 131.304000854492,
+			"time": 88.1628220203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 67,
+			"lastPlatform": 0.449870000000004,
+			"maxTimer": 131.304000854492,
+			"time": 88.6126920203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 68,
+			"lastPlatform": 0.433495999999991,
+			"maxTimer": 131.304000854492,
+			"time": 89.0461880203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 69,
+			"lastPlatform": 0.383806000000007,
+			"maxTimer": 131.304000854492,
+			"time": 89.4299940203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 70,
+			"lastPlatform": 0.349505999999991,
+			"maxTimer": 131.304000854492,
+			"time": 89.7795000203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 71,
+			"lastPlatform": 0.366565000000008,
+			"maxTimer": 131.304000854492,
+			"time": 90.1460650203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 72,
+			"lastPlatform": 0.38350299999999,
+			"maxTimer": 131.304000854492,
+			"time": 90.5295680203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 73,
+			"lastPlatform": 0.366412000000011,
+			"maxTimer": 131.304000854492,
+			"time": 90.8959800203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 74,
+			"lastPlatform": 0.366929999999996,
+			"maxTimer": 131.304000854492,
+			"time": 91.2629100203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 75,
+			"lastPlatform": 0.366462999999996,
+			"maxTimer": 131.304000854492,
+			"time": 91.6293730203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 76,
+			"lastPlatform": 0.367340999999996,
+			"maxTimer": 131.304000854492,
+			"time": 91.9967140203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 77,
+			"lastPlatform": 0.399961000000005,
+			"maxTimer": 131.304000854492,
+			"time": 92.3966750203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 78,
+			"lastPlatform": 0.366112999999999,
+			"maxTimer": 131.304000854492,
+			"time": 92.7627880203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 79,
+			"lastPlatform": 0.383301000000003,
+			"maxTimer": 131.304000854492,
+			"time": 93.1460890203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 80,
+			"lastPlatform": 0.383493999999999,
+			"maxTimer": 131.304000854492,
+			"time": 93.5295830203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 81,
+			"lastPlatform": 0.333407000000008,
+			"maxTimer": 131.304000854492,
+			"time": 93.8629900203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 82,
+			"lastPlatform": 0.383191999999994,
+			"maxTimer": 131.304000854492,
+			"time": 94.2461820203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 83,
+			"lastPlatform": 0.366662000000005,
+			"maxTimer": 131.304000854492,
+			"time": 94.6128440203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 84,
+			"lastPlatform": 0.383300999999989,
+			"maxTimer": 131.304000854492,
+			"time": 94.9961450203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 85,
+			"lastPlatform": 0.383324999999999,
+			"maxTimer": 131.304000854492,
+			"time": 95.3794700203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 86,
+			"lastPlatform": 0.366652000000002,
+			"maxTimer": 131.304000854492,
+			"time": 95.7461220203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 87,
+			"lastPlatform": 0.400150000000011,
+			"maxTimer": 131.304000854492,
+			"time": 96.1462720203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 88,
+			"lastPlatform": 0.367381999999992,
+			"maxTimer": 131.304000854492,
+			"time": 96.5136540203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 89,
+			"lastPlatform": 0.399119999999996,
+			"maxTimer": 131.304000854492,
+			"time": 96.9127740203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 90,
+			"lastPlatform": 0.383372000000008,
+			"maxTimer": 131.304000854492,
+			"time": 97.2961460203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 91,
+			"lastPlatform": 0.366816,
+			"maxTimer": 131.304000854492,
+			"time": 97.6629620203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 92,
+			"lastPlatform": 0.349673999999993,
+			"maxTimer": 131.304000854492,
+			"time": 98.0126360203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 3,
+			"id": 93,
+			"lastPlatform": 0.383085000000008,
+			"maxTimer": 131.304000854492,
+			"time": 98.3957210203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 94,
+			"lastPlatform": 0.783717999999993,
+			"maxTimer": 131.304000854492,
+			"time": 99.1794390203516
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 95,
+			"lastPlatform": 1.10001800000001,
+			"maxTimer": 131.304000854492,
+			"time": 100.279457020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 96,
+			"lastPlatform": 1.866579,
+			"maxTimer": 131.304000854492,
+			"time": 102.146036020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 97,
+			"lastPlatform": 1.083507,
+			"maxTimer": 131.304000854492,
+			"time": 103.229543020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 98,
+			"lastPlatform": 1.883017,
+			"maxTimer": 131.304000854492,
+			"time": 105.112560020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 99,
+			"lastPlatform": 1.200283,
+			"maxTimer": 131.304000854492,
+			"time": 106.312843020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 100,
+			"lastPlatform": 1.816811,
+			"maxTimer": 131.304000854492,
+			"time": 108.129654020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 101,
+			"lastPlatform": 1.266334,
+			"maxTimer": 131.304000854492,
+			"time": 109.395988020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 102,
+			"lastPlatform": 1.76684,
+			"maxTimer": 131.304000854492,
+			"time": 111.162828020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 103,
+			"lastPlatform": 1.11697700000001,
+			"maxTimer": 131.304000854492,
+			"time": 112.279805020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 104,
+			"lastPlatform": 1.849728,
+			"maxTimer": 131.304000854492,
+			"time": 114.129533020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 105,
+			"lastPlatform": 1.09939999999999,
+			"maxTimer": 131.304000854492,
+			"time": 115.228933020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 106,
+			"lastPlatform": 1.93374,
+			"maxTimer": 131.304000854492,
+			"time": 117.162673020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 107,
+			"lastPlatform": 1.21677100000001,
+			"maxTimer": 131.304000854492,
+			"time": 118.379444020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 108,
+			"lastPlatform": 1.74964899999999,
+			"maxTimer": 131.304000854492,
+			"time": 120.129093020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 4,
+			"id": 109,
+			"lastPlatform": 1.333815,
+			"maxTimer": 131.304000854492,
+			"time": 121.462908020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 1,
+			"id": 110,
+			"lastPlatform": 1.716615,
+			"maxTimer": 131.304000854492,
+			"time": 123.179523020352
+		}
+	},
+	{
+		"platform": {
+			"barTime": 2,
+			"id": 111,
+			"lastPlatform": 7.99991899999998,
+			"maxTimer": 131.304000854492,
+			"time": 131.179442020352
+		}
+	}
+]

@@ -44,7 +44,7 @@ func _save_file():
 	file.store_string(JSON.stringify(data, "\t"))
 	file.close()
 	print("program done")
-	print("exceeding program")
+	await print("exceeding program")
 	get_tree().quit()
 	
 

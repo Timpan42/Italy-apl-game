@@ -169,9 +169,10 @@ rotation = 3.14159
 sendingPlayerDirection = "down"
 
 [node name="Player" parent="." instance=ExtResource("6_bsvke")]
-position = Vector2(345, 350)
+position = Vector2(345, 358)
 gravity = 980
 movementSpeed = 150.0
+cirecleIncloseTimer = 0.31
 
 [connection signal="startGame" from="." to="AudioSyncPlayer" method="_on_changingamedirection_start_game"]
 [connection signal="isPlaying" from="AudioSyncPlayer" to="." method="_on_audio_sync_player_is_playing"]
