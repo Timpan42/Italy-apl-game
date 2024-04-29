@@ -102,7 +102,7 @@ position = Vector2(3273, 634)
 scale = Vector2(11.5, 0.7)
 
 [node name="Wall4" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
-position = Vector2(3897, 374)
+position = Vector2(3897, 378)
 rotation = -1.5708
 scale = Vector2(5.5, 0.7)
 
@@ -125,7 +125,7 @@ position = Vector2(3945, 1273)
 scale = Vector2(16, 0.7)
 
 [node name="Wall8" parent="SectionHolder/FillerPlatformts 1" instance=ExtResource("5_eowxv")]
-position = Vector2(3084, 1101)
+position = Vector2(3084, 1102)
 rotation = 1.5708
 scale = Vector2(4, 0.7)
 
@@ -477,6 +477,7 @@ position = Vector2(-3631.73, -1495.04)
 [node name="Player" parent="." instance=ExtResource("4_glsv6")]
 gravity = 980
 movementSpeed = 150.0
+cirecleIncloseTimer = 0.31
 
 [connection signal="changePlayerStartPosition" from="GameManager" to="Player" method="_on_game_manager_change_player_start_position"]
 [connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]

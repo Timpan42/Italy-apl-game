@@ -9,9 +9,11 @@ var canMove = false
 var stopGravity = true
 
 var lastDirectionBlockInteraction
+var lastSecondDirection
 var moveHorizontal = true
 var onDirectionBlock = false
 var moveDirection = 1
+var moveSecondDirection = 0
 
 var playerDidDirectionInput = false
 var points = 0
@@ -34,7 +36,10 @@ func _process(delta):
 	
 	_player_direction_input()
 	
-	if moveHorizontal:
+	if moveSecondDirection != 0:
+		velocity.y = (movementSpeed / 2) * moveDirection
+		velocity.x = (movementSpeed / 2) * moveSecondDirection
+	elif moveHorizontal && moveSecondDirection == 0:
 		velocity.x = movementSpeed * moveDirection
 		velocity.y = 0
 	else:
@@ -53,8 +58,9 @@ func _process(delta):
 	move_and_slide()
 
 
-func _collide_with_direction_block(direction : String):
+func _collide_with_direction_block(direction : String, secondDirection : String):
 	lastDirectionBlockInteraction = direction
+	lastSecondDirection = secondDirection
 	onDirectionBlock = true
 	playerDidDirectionInput = true
 	_inclose_circle()
@@ -68,22 +74,42 @@ func _inclose_circle():
 	getCircle.visible = false
 
 func _send_direction(trunOfGravity : bool):
+	var secondDirection = _side_directions()
 	match lastDirectionBlockInteraction: 
 		"up":
-			_change_player_movement(-1, false)
+			if secondDirection != 0:
+				_change_player_movement(-1, secondDirection, false)
+			else :
+				_change_player_movement(-1, 0, false)
 		"down": 
-			_change_player_movement(1, false)
+			if secondDirection != 0:
+				_change_player_movement(1, secondDirection, false)
+			else :
+				_change_player_movement(1, 0, false)
 		"left":
-			_change_player_movement(-1, true)
+			_change_player_movement(-1, 0, true)
 		"right":
-			_change_player_movement(1, true)
+			_change_player_movement(1, 0, true)
 		_: 
 			print("no direction")
 	stopGravity = trunOfGravity
 
-func _change_player_movement(direction : int, horizontal):
+func _side_directions():
+	var direction
+	if lastSecondDirection == "left":
+		direction = -1
+	elif lastSecondDirection == "right":
+		direction = 1
+	else: 
+		direction = 0
+	return direction
+
+func _change_player_movement(direction : int, secondDirection : int, horizontal):
 	moveHorizontal = horizontal
 	moveDirection = direction
+	moveSecondDirection = secondDirection
+	print(moveDirection)
+	print(moveSecondDirection)
 
 func _exited_direction_block():
 	onDirectionBlock = false
@@ -95,19 +121,23 @@ func _exited_direction_block():
 func _player_direction_input():
 	if onDirectionBlock && playerDidDirectionInput:
 		if Input.is_action_just_pressed("up_input"):
-			_dose_input_match_direction("up")
+			_dose_input_match_direction("up", false)
 		elif Input.is_action_just_pressed("down_input"):
-			_dose_input_match_direction("down")
+			_dose_input_match_direction("down", false)
 		elif Input.is_action_just_pressed("left_input"):
-			_dose_input_match_direction("left")
+			_dose_input_match_direction("left", false)
 		elif Input.is_action_just_pressed("right_input"):
-			_dose_input_match_direction("right")
+			_dose_input_match_direction("right", false)
+		elif Input.is_action_just_pressed("angled_input"):
+			_dose_input_match_direction("double", true)
 
 
-func _dose_input_match_direction(direction : String):
+func _dose_input_match_direction(direction : String, doubleInput : bool):
 	playerDidDirectionInput = false
-	if  direction == lastDirectionBlockInteraction:
-		_point_counter()
+	if direction == "double" && doubleInput:
+		_point_counter() 
+	elif direction == lastDirectionBlockInteraction && !doubleInput:
+		_point_counter() 
 	else:
 		print("Wrong input") 
 

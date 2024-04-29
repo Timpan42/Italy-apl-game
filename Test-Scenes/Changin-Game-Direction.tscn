@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5esbhl6gikt1"]
+[gd_scene load_steps=8 format=3 uid="uid://c5esbhl6gikt1"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_46sot"]
 [ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_hp073"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wtebfil78odi" path="res://Prefabs/Platforms/Base-Platform.tscn" id="4_lo0oe"]
 [ext_resource type="PackedScene" uid="uid://e6oixedv2d0i" path="res://Prefabs/Platforms/Arrow-Platform-Right.tscn" id="5_qa1nk"]
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="6_bsvke"]
+[ext_resource type="PackedScene" uid="uid://c70rjciw8jpmp" path="res://Prefabs/Platforms/Arrow-Platform-Right-Up.tscn" id="6_ulhp4"]
 
 [node name="Changin-game-direction" type="Node2D"]
 script = ExtResource("1_46sot")
@@ -16,162 +17,235 @@ script = ExtResource("1_46sot")
 script = ExtResource("3_x4yy7")
 fileName = "res://LevelInfo/Level1.json"
 
-[node name="PlatformHolder" type="Node2D" parent="."]
+[node name="test 1" type="Node2D" parent="."]
 
-[node name="Platform" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="PlatformHolder" type="Node2D" parent="test 1"]
+
+[node name="Platform" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(37, 426)
 
-[node name="Platform2" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform2" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(108, 426)
 
-[node name="Platform3" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform3" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(187, 426)
 
-[node name="Platform4" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform4" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(266, 426)
 
-[node name="Platform5" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform5" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(337, 426)
 
-[node name="Platform6" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform6" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(416, 426)
 
-[node name="Platform7" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform7" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(487, 426)
 
-[node name="Platform8" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform8" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(566, 426)
 
-[node name="Platform9" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform9" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(645, 426)
 
-[node name="Platform10" parent="PlatformHolder" instance=ExtResource("4_lo0oe")]
+[node name="Platform10" parent="test 1/PlatformHolder" instance=ExtResource("4_lo0oe")]
 position = Vector2(716, 426)
 
-[node name="PlatformHolder2" type="Node2D" parent="."]
+[node name="PlatformHolder2" type="Node2D" parent="test 1"]
 position = Vector2(463, -290)
 rotation = 1.5708
 
-[node name="Platform" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(37, 426)
 
-[node name="Platform2" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform2" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(108, 426)
 
-[node name="Platform3" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform3" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(187, 426)
 
-[node name="Platform4" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform4" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(266, 426)
 
-[node name="Platform5" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform5" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(337, 426)
 
-[node name="Platform6" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform6" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(416, 426)
 
-[node name="Platform7" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform7" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(487, 426)
 
-[node name="Platform8" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform8" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(566, 426)
 
-[node name="Platform9" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform9" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(645, 426)
 
-[node name="Platform10" parent="PlatformHolder2" instance=ExtResource("4_lo0oe")]
+[node name="Platform10" parent="test 1/PlatformHolder2" instance=ExtResource("4_lo0oe")]
 position = Vector2(716, 426)
 
-[node name="PlatformHolder3" type="Node2D" parent="."]
+[node name="PlatformHolder3" type="Node2D" parent="test 1"]
 position = Vector2(753, 173)
 rotation = 3.14159
 
-[node name="Platform" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(37, 426)
 
-[node name="Platform2" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform2" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(108, 426)
 
-[node name="Platform3" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform3" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(187, 426)
 
-[node name="Platform4" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform4" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(266, 426)
 
-[node name="Platform5" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform5" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(337, 426)
 
-[node name="Platform6" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform6" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(416, 426)
 
-[node name="Platform7" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform7" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(487, 426)
 
-[node name="Platform8" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform8" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(566, 426)
 
-[node name="Platform9" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform9" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(645, 426)
 
-[node name="Platform10" parent="PlatformHolder3" instance=ExtResource("4_lo0oe")]
+[node name="Platform10" parent="test 1/PlatformHolder3" instance=ExtResource("4_lo0oe")]
 position = Vector2(716, 426)
 
-[node name="PlatformHolder4" type="Node2D" parent="."]
+[node name="PlatformHolder4" type="Node2D" parent="test 1"]
 position = Vector2(290, 463)
-rotation = 4.71239
+rotation = -1.5708
 
-[node name="Platform" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(37, 426)
 
-[node name="Platform2" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform2" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(108, 426)
 
-[node name="Platform3" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform3" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(187, 426)
 
-[node name="Platform4" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform4" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(266, 426)
 
-[node name="Platform5" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform5" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(337, 426)
 
-[node name="Platform6" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform6" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(416, 426)
 
-[node name="Platform7" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform7" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(487, 426)
 
-[node name="Platform8" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform8" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(566, 426)
 
-[node name="Platform9" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform9" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(645, 426)
 
-[node name="Platform10" parent="PlatformHolder4" instance=ExtResource("4_lo0oe")]
+[node name="Platform10" parent="test 1/PlatformHolder4" instance=ExtResource("4_lo0oe")]
 position = Vector2(716, 426)
 
-[node name="ArrowPlatformLeft" parent="." instance=ExtResource("5_qa1nk")]
+[node name="ArrowPlatformLeft" parent="test 1" instance=ExtResource("5_qa1nk")]
 position = Vector2(645, 426)
 sendingPlayerDirection = "up"
 
-[node name="ArrowPlatformLeft4" parent="." instance=ExtResource("5_qa1nk")]
+[node name="ArrowPlatformLeft4" parent="test 1" instance=ExtResource("5_qa1nk")]
 position = Vector2(108, 426)
 turnOfGravity = false
 
-[node name="ArrowPlatformLeft2" parent="." instance=ExtResource("5_qa1nk")]
+[node name="ArrowPlatformLeft2" parent="test 1" instance=ExtResource("5_qa1nk")]
 position = Vector2(645, -253)
 rotation = 3.14159
 sendingPlayerDirection = "left"
 
-[node name="ArrowPlatformLeft3" parent="." instance=ExtResource("5_qa1nk")]
+[node name="ArrowPlatformLeft3" parent="test 1" instance=ExtResource("5_qa1nk")]
 position = Vector2(108, -254)
 rotation = 3.14159
 sendingPlayerDirection = "down"
 
+[node name="test 2" type="Node2D" parent="."]
+position = Vector2(1578, 0)
+
+[node name="section 1" type="Node2D" parent="test 2"]
+
+[node name="ArrowPlatformRightUp" parent="test 2/section 1" instance=ExtResource("6_ulhp4")]
+position = Vector2(1191, 422)
+
+[node name="Platform" parent="test 2/section 1" instance=ExtResource("4_lo0oe")]
+position = Vector2(1511, 422)
+scale = Vector2(5, 0.7)
+
+[node name="Platform3" parent="test 2/section 1" instance=ExtResource("4_lo0oe")]
+position = Vector2(875, 422)
+scale = Vector2(5, 0.7)
+
+[node name="Platform2" parent="test 2/section 1" instance=ExtResource("4_lo0oe")]
+position = Vector2(1752, 169)
+rotation = -1.5708
+scale = Vector2(5.3, 0.7)
+
+[node name="section 2" type="Node2D" parent="test 2"]
+
+[node name="ArrowPlatformRightUp" parent="test 2/section 2" instance=ExtResource("6_ulhp4")]
+position = Vector2(1752, -163)
+rotation = -1.5708
+secondPlayerDirection = "left"
+
+[node name="Platform2" parent="test 2/section 2" instance=ExtResource("4_lo0oe")]
+position = Vector2(1752, -484)
+rotation = -1.5708
+scale = Vector2(5, 0.7)
+
+[node name="section 3" type="Node2D" parent="test 2"]
+
+[node name="ArrowPlatformRightUp" parent="test 2/section 3" instance=ExtResource("6_ulhp4")]
+position = Vector2(1190, -712)
+rotation = 3.14159
+sendingPlayerDirection = "down"
+secondPlayerDirection = "left"
+
+[node name="Platform2" parent="test 2/section 3" instance=ExtResource("4_lo0oe")]
+position = Vector2(1510, -712)
+rotation = 3.14159
+scale = Vector2(5, 0.7)
+
+[node name="Platform3" parent="test 2/section 3" instance=ExtResource("4_lo0oe")]
+position = Vector2(870, -712)
+rotation = 3.14159
+scale = Vector2(5, 0.7)
+
+[node name="section 4" type="Node2D" parent="test 2"]
+
+[node name="ArrowPlatformRightUp" parent="test 2/section 4" instance=ExtResource("6_ulhp4")]
+position = Vector2(640, -162)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Platform2" parent="test 2/section 4" instance=ExtResource("4_lo0oe")]
+position = Vector2(640, -482)
+rotation = 1.5708
+scale = Vector2(5, 0.7)
+
+[node name="Platform3" parent="test 2/section 4" instance=ExtResource("4_lo0oe")]
+position = Vector2(640, 159)
+rotation = 1.5708
+scale = Vector2(5, 0.7)
+
+[node name="ArrowPlatformRight" parent="test 2/section 4" instance=ExtResource("5_qa1nk")]
+position = Vector2(942, 133)
+
 [node name="Player" parent="." instance=ExtResource("6_bsvke")]
-position = Vector2(345, 358)
+position = Vector2(2578, 352)
 gravity = 980
-movementSpeed = 150.0
+movementSpeed = 200.0
 cirecleIncloseTimer = 0.31
 
 [connection signal="startGame" from="." to="AudioSyncPlayer" method="_on_changingamedirection_start_game"]

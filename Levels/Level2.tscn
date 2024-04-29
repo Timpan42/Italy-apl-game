@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://dpt8cb2vrjmxl"]
+[gd_scene load_steps=7 format=3 uid="uid://dpt8cb2vrjmxl"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_tx6bg"]
+[ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_bbavg"]
+[ext_resource type="AudioStream" uid="uid://bvghxihe4ry8i" path="res://Assets/Music/2019-01-22_-_Ready_to_Fight_-_David_Fesliyan.mp3" id="3_tle50"]
+[ext_resource type="PackedScene" uid="uid://0m8xfby846rt" path="res://Prefabs/Systems/Block-Timing.tscn" id="4_e7114"]
+[ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="5_g0syc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qb3tp"]
 
 [node name="Level2" type="Node2D"]
+
+[node name="Background" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0.12549, 0.101961, 0.384314)
+scale = Vector2(11895, 6790)
+mesh = SubResource("QuadMesh_qb3tp")
+metadata/_edit_lock_ = true
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_tx6bg")
+
+[node name="AudioSyncPlayer" parent="." instance=ExtResource("2_bbavg")]
+stream = ExtResource("3_tle50")
+
+[node name="BlockTiming" parent="AudioSyncPlayer" instance=ExtResource("4_e7114")]
+fileName = "res://LevelInfo/Level1.json"
+
+[node name="Section 1" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("5_g0syc")]
+gravity = 980
+movementSpeed = 150.0
+cirecleIncloseTimer = 0.31
+
+[connection signal="changePlayerStartPosition" from="GameManager" to="Player" method="_on_game_manager_change_player_start_position"]
+[connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]
+[connection signal="playerCollide" from="AudioSyncPlayer" to="Player" method="_on_audio_sync_player_player_collide"]
