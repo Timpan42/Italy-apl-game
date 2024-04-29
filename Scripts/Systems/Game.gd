@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var startIndex : int
-@export var songOffset : float
+@export var startIndex : int = 0
+@export var songOffset : float = 0
 @export var xOffset : float
 @export var yOffset : float
 
@@ -13,7 +13,7 @@ var gameStarted = false
 signal startGame(startIndex : int, songOffset : float)
 signal changePlayerStartPosition(pos : Vector2, direction : String, turnOfGravity : bool)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("escape_input"):
 		get_tree().quit()
 
@@ -41,5 +41,5 @@ func _on_audio_sync_player_is_playing():
 func _on_audio_sync_player_finished():
 	pass # Replace with function body.
 
-func _on_player_send_position(position):
-	$SavePositionData._update_data(position)
+func _on_player_send_position(pos):
+	$SavePositionData._update_data(pos)

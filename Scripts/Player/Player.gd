@@ -61,7 +61,7 @@ func _collide_with_direction_block(direction : String):
 
 func _inclose_circle():
 	var tween = get_tree().create_tween()
-	getCircle.scale = Vector2(1,1)
+	getCircle.scale = Vector2(0,0)
 	getCircle.visible = true
 	tween.tween_property(getCircle, "scale" ,Vector2(0.7,0.7), cirecleIncloseTimer)
 	await tween.finished
