@@ -1,6 +1,7 @@
 extends Area2D
 
 @export_enum("up", "down", "left", "right") var sendingPlayerDirection : String
+@export_enum("non", "left", "right") var secondPlayerDirection : String = "non"
 @export var turnOfGravity : bool = false
 
 func _get_sending_player_direction():
@@ -10,7 +11,7 @@ func _get_turn_of_gravity():
 	return turnOfGravity
 
 func _on_body_entered(player):
-	player._collide_with_direction_block(sendingPlayerDirection)
+	player._collide_with_direction_block(sendingPlayerDirection, secondPlayerDirection)
 
 func _on_body_exited(player):
 	player._exited_direction_block()
