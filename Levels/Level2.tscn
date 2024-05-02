@@ -21,8 +21,9 @@ scale = Vector2(23897, 13641.1)
 mesh = SubResource("QuadMesh_qb3tp")
 metadata/_edit_lock_ = true
 
-[node name="GameManager" type="Node2D" parent="."]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("sectionHolder")]
 script = ExtResource("1_tx6bg")
+sectionHolder = NodePath("../SectionHolder")
 
 [node name="AudioSyncPlayer" parent="." instance=ExtResource("2_bbavg")]
 stream = ExtResource("3_tle50")
@@ -204,10 +205,262 @@ position = Vector2(2217.35, -2458.85)
 rotation = -1.5708
 sendingPlayerDirection = "down"
 
-[node name="Right36" parent="SectionHolder/Section 3" instance=ExtResource("5_5vdmh")]
+[node name="Up36" parent="SectionHolder/Section 3" instance=ExtResource("9_sretr")]
 position = Vector2(1767.3, -2078.8)
 rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="LeftUp37" parent="SectionHolder/Section 3" instance=ExtResource("7_fc0y0")]
+position = Vector2(2023.9, -2078.8)
+rotation = -1.5708
 sendingPlayerDirection = "down"
+
+[node name="Section 4" type="Node2D" parent="SectionHolder"]
+
+[node name="Up38" parent="SectionHolder/Section 4" instance=ExtResource("9_sretr")]
+position = Vector2(1640.58, -1705.48)
+rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="Right39" parent="SectionHolder/Section 4" instance=ExtResource("5_5vdmh")]
+position = Vector2(1883.31, -1660)
+
+[node name="Right40" parent="SectionHolder/Section 4" instance=ExtResource("5_5vdmh")]
+position = Vector2(2260.02, -1660)
+
+[node name="Right41" parent="SectionHolder/Section 4" instance=ExtResource("5_5vdmh")]
+position = Vector2(2483.34, -1660)
+
+[node name="Left42" parent="SectionHolder/Section 4" instance=ExtResource("8_phslp")]
+position = Vector2(2856.72, -1720)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="RightUp43" parent="SectionHolder/Section 4" instance=ExtResource("6_cjj5o")]
+position = Vector2(2774.72, -1483.39)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="LeftUp44" parent="SectionHolder/Section 4" instance=ExtResource("7_fc0y0")]
+position = Vector2(3794.72, -493.389)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="RightUp45" parent="SectionHolder/Section 4" instance=ExtResource("6_cjj5o")]
+position = Vector2(3561.29, -259.96)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="LeftUp46" parent="SectionHolder/Section 4" instance=ExtResource("7_fc0y0")]
+position = Vector2(4024.54, 123.29)
+rotation = -1.5708
+sendingPlayerDirection = "down"
+
+[node name="RightUp47" parent="SectionHolder/Section 4" instance=ExtResource("6_cjj5o")]
+position = Vector2(3711.22, 336.613)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="LeftUp48" parent="SectionHolder/Section 4" instance=ExtResource("7_fc0y0")]
+position = Vector2(4177.94, 703.333)
+rotation = -1.5708
+sendingPlayerDirection = "down"
+
+[node name="RightUp49" parent="SectionHolder/Section 4" instance=ExtResource("6_cjj5o")]
+position = Vector2(3898.01, 943.258)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="LeftUp50" parent="SectionHolder/Section 4" instance=ExtResource("7_fc0y0")]
+position = Vector2(4364.7, 1329.94)
+rotation = -1.5708
+sendingPlayerDirection = "down"
+
+[node name="Section 5" type="Node2D" parent="SectionHolder"]
+
+[node name="Left51" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(4071.34, 1543.3)
+
+[node name="Left52" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(3684.72, 1543.3)
+
+[node name="Left53" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(3471.26, 1543.3)
+
+[node name="Left54" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(3091.4, 1543.3)
+
+[node name="Left55" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(2861.35, 1523.3)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Left56" parent="SectionHolder/Section 5" instance=ExtResource("8_phslp")]
+position = Vector2(2861.35, 1129.91)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Up57" parent="SectionHolder/Section 5" instance=ExtResource("9_sretr")]
+position = Vector2(2943.35, 886.637)
+rotation = 4.71239
+sendingPlayerDirection = "left"
+
+[node name="Right58" parent="SectionHolder/Section 5" instance=ExtResource("5_5vdmh")]
+position = Vector2(2580.03, 854.637)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Right59" parent="SectionHolder/Section 5" instance=ExtResource("5_5vdmh")]
+position = Vector2(2333.39, 854.637)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="LeftUp60" parent="SectionHolder/Section 5" instance=ExtResource("7_fc0y0")]
+position = Vector2(1350.02, 886.637)
+
+[node name="Section 6" type="Node2D" parent="SectionHolder"]
+
+[node name="RightUp61" parent="SectionHolder/Section 6" instance=ExtResource("6_cjj5o")]
+position = Vector2(1180.02, 716.632)
+rotation = 3.14159
+sendingPlayerDirection = "down"
+secondPlayerDirection = "left"
+
+[node name="LeftUp62" parent="SectionHolder/Section 6" instance=ExtResource("7_fc0y0")]
+position = Vector2(1003.34, 893.305)
+
+[node name="RightUp63" parent="SectionHolder/Section 6" instance=ExtResource("6_cjj5o")]
+position = Vector2(856.683, 746.643)
+rotation = -3.14159
+sendingPlayerDirection = "down"
+secondPlayerDirection = "left"
+
+[node name="RightUp64" parent="SectionHolder/Section 6" instance=ExtResource("6_cjj5o")]
+position = Vector2(706.669, 896.657)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Left65" parent="SectionHolder/Section 6" instance=ExtResource("8_phslp")]
+position = Vector2(903.337, 1043.32)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Left66" parent="SectionHolder/Section 6" instance=ExtResource("8_phslp")]
+position = Vector2(903.337, 1190.09)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Left67" parent="SectionHolder/Section 6" instance=ExtResource("8_phslp")]
+position = Vector2(903.337, 1343.3)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="LeftUp68" parent="SectionHolder/Section 6" instance=ExtResource("7_fc0y0")]
+position = Vector2(873.337, 1496.66)
+
+[node name="Up69" parent="SectionHolder/Section 6" instance=ExtResource("9_sretr")]
+position = Vector2(650.017, 1233.34)
+rotation = 3.14159
+sendingPlayerDirection = "down"
+
+[node name="Right70" parent="SectionHolder/Section 6" instance=ExtResource("5_5vdmh")]
+position = Vector2(590.017, 1503.33)
+rotation = 1.5708
+sendingPlayerDirection = "down"
+
+[node name="Right71" parent="SectionHolder/Section 6" instance=ExtResource("5_5vdmh")]
+position = Vector2(650.017, 1653.37)
+
+[node name="Right72" parent="SectionHolder/Section 6" instance=ExtResource("5_5vdmh")]
+position = Vector2(803.523, 1653.37)
+
+[node name="Right73" parent="SectionHolder/Section 6" instance=ExtResource("5_5vdmh")]
+position = Vector2(960.021, 1653.37)
+
+[node name="Section 7" type="Node2D" parent="SectionHolder"]
+
+[node name="RightUp74" parent="SectionHolder/Section 7" instance=ExtResource("6_cjj5o")]
+position = Vector2(1103.32, 1653.37)
+
+[node name="LeftUp75" parent="SectionHolder/Section 7" instance=ExtResource("7_fc0y0")]
+position = Vector2(1316.68, 1420.01)
+rotation = 3.14159
+sendingPlayerDirection = "down"
+secondPlayerDirection = "right"
+
+[node name="Up76" parent="SectionHolder/Section 7" instance=ExtResource("9_sretr")]
+position = Vector2(1556.68, 1640.01)
+
+[node name="Right77" parent="SectionHolder/Section 7" instance=ExtResource("5_5vdmh")]
+position = Vector2(1616.68, 1266.69)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right78" parent="SectionHolder/Section 7" instance=ExtResource("5_5vdmh")]
+position = Vector2(1616.68, 1049.99)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right79" parent="SectionHolder/Section 7" instance=ExtResource("5_5vdmh")]
+position = Vector2(1616.68, 673.391)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Right80" parent="SectionHolder/Section 7" instance=ExtResource("5_5vdmh")]
+position = Vector2(1616.68, 433.334)
+rotation = 4.71239
+sendingPlayerDirection = "up"
+
+[node name="Up81" parent="SectionHolder/Section 7" instance=ExtResource("9_sretr")]
+position = Vector2(1534.68, 193.277)
+rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="RightUp82" parent="SectionHolder/Section 7" instance=ExtResource("6_cjj5o")]
+position = Vector2(1898.05, 193.277)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="Up83" parent="SectionHolder/Section 7" instance=ExtResource("9_sretr")]
+position = Vector2(1261.41, -413.358)
+rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="RightUp84" parent="SectionHolder/Section 7" instance=ExtResource("6_cjj5o")]
+position = Vector2(1884.75, -403.358)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="Left85" parent="SectionHolder/Section 7" instance=ExtResource("8_phslp")]
+position = Vector2(1664.87, -633.238)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Left86" parent="SectionHolder/Section 7" instance=ExtResource("8_phslp")]
+position = Vector2(2051.62, -633.238)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Left87" parent="SectionHolder/Section 7" instance=ExtResource("8_phslp")]
+position = Vector2(2294.97, -633.238)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="RightUp88" parent="SectionHolder/Section 7" instance=ExtResource("6_cjj5o")]
+position = Vector2(2644.9, -551.238)
+
+[node name="RightUp89" parent="SectionHolder/Section 7" instance=ExtResource("6_cjj5o")]
+position = Vector2(2911.67, -818.001)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="Left90" parent="SectionHolder/Section 7" instance=ExtResource("8_phslp")]
+position = Vector2(2568.34, -1161.32)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Right91" parent="SectionHolder/Section 7" instance=ExtResource("5_5vdmh")]
+position = Vector2(4168.33, -1079.32)
 
 [node name="Player" parent="." instance=ExtResource("5_g0syc")]
 gravity = 980
