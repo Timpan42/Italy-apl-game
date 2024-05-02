@@ -21,9 +21,6 @@ var onOk = false
 var onGreat = false
 var onPerfect = false 
 
-var moveTimer = 0
-var moveTime = true
-
 signal startGame
 
 func _process(delta):
@@ -37,8 +34,8 @@ func _process(delta):
 	_player_direction_input()
 	
 	if moveSecondDirection != 0:
-		velocity.y = (movementSpeed / 2) * moveDirection
-		velocity.x = (movementSpeed / 2) * moveSecondDirection
+		velocity.y = movementSpeed * moveDirection
+		velocity.x = movementSpeed * moveSecondDirection
 	elif moveHorizontal && moveSecondDirection == 0:
 		velocity.x = movementSpeed * moveDirection
 		velocity.y = 0
@@ -48,13 +45,7 @@ func _process(delta):
 	
 	if !stopGravity:
 		velocity.y = gravity * delta
-	
-	if position.x > 720 && moveTime:
-		print(moveTimer)
-		moveTime = false
-	else:
-		moveTimer += delta
-	
+
 	move_and_slide()
 
 
@@ -108,8 +99,6 @@ func _change_player_movement(direction : int, secondDirection : int, horizontal)
 	moveHorizontal = horizontal
 	moveDirection = direction
 	moveSecondDirection = secondDirection
-	print(moveDirection)
-	print(moveSecondDirection)
 
 func _exited_direction_block():
 	onDirectionBlock = false
@@ -119,7 +108,10 @@ func _exited_direction_block():
 
 
 func _player_direction_input():
-	if onDirectionBlock && playerDidDirectionInput:
+	if onDirectionBlock && playerDidDirectionInput && lastSecondDirection != "non":
+		if Input.is_action_just_pressed("angled_input"):
+			_dose_input_match_direction("double", true)
+	elif onDirectionBlock && playerDidDirectionInput && lastSecondDirection == "non":
 		if Input.is_action_just_pressed("up_input"):
 			_dose_input_match_direction("up", false)
 		elif Input.is_action_just_pressed("down_input"):
@@ -128,9 +120,6 @@ func _player_direction_input():
 			_dose_input_match_direction("left", false)
 		elif Input.is_action_just_pressed("right_input"):
 			_dose_input_match_direction("right", false)
-		elif Input.is_action_just_pressed("angled_input"):
-			_dose_input_match_direction("double", true)
-
 
 func _dose_input_match_direction(direction : String, doubleInput : bool):
 	playerDidDirectionInput = false

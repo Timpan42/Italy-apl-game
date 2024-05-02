@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://cva6uqqgs07qj"]
+
+[ext_resource type="Script" path="res://Scripts/Platform/Arrow-Platform.gd" id="1_vo2lk"]
+[ext_resource type="Texture2D" uid="uid://ctsfsh3kwneuw" path="res://Assets/images.png" id="2_v21dn"]
+[ext_resource type="Texture2D" uid="uid://c8l31vyb0vsxc" path="res://Assets/white arrow.png" id="3_x7tpo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axkr6"]
+size = Vector2(150, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glbvg"]
+size = Vector2(112, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrk65"]
+size = Vector2(80, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm2ap"]
+size = Vector2(26, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv33e"]
+size = Vector2(14, 115)
+
+[node name="ArrowPlatformLeftUp" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_vo2lk")
+sendingPlayerDirection = "up"
+secondPlayerDirection = "left"
+turnOfGravity = true
+
+[node name="Bot" type="Sprite2D" parent="."]
+modulate = Color(0.533333, 0.301961, 1, 1)
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_v21dn")
+
+[node name="Mid" type="Sprite2D" parent="."]
+modulate = Color(0.533333, 0.654902, 1, 1)
+position = Vector2(0, 10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_v21dn")
+
+[node name="Top" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_v21dn")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+rotation = -2.35619
+scale = Vector2(0.119075, 0.119075)
+texture = ExtResource("3_x7tpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_axkr6")
+
+[node name="OkCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OkCollision"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_glbvg")
+
+[node name="GreatCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreatCollision"]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_lrk65")
+
+[node name="PerfectCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectCollision"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_tm2ap")
+
+[node name="SendPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SendPlayer"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_pv33e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="OkCollision" to="." method="_on_ok_collision_body_entered"]
+[connection signal="body_entered" from="GreatCollision" to="." method="_on_great_collision_body_entered"]
+[connection signal="body_entered" from="PerfectCollision" to="." method="_on_perfect_collision_body_entered"]
+[connection signal="body_entered" from="SendPlayer" to="." method="_on_send_player_body_entered"]

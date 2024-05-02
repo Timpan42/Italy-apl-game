@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpt8cb2vrjmxl"]
+[gd_scene load_steps=12 format=3 uid="uid://dpt8cb2vrjmxl"]
 
 [ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_tx6bg"]
 [ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_bbavg"]
 [ext_resource type="AudioStream" uid="uid://bvghxihe4ry8i" path="res://Assets/Music/2019-01-22_-_Ready_to_Fight_-_David_Fesliyan.mp3" id="3_tle50"]
 [ext_resource type="PackedScene" uid="uid://0m8xfby846rt" path="res://Prefabs/Systems/Block-Timing.tscn" id="4_e7114"]
+[ext_resource type="PackedScene" uid="uid://e6oixedv2d0i" path="res://Prefabs/Platforms/Arrow-Platform-Right.tscn" id="5_5vdmh"]
 [ext_resource type="PackedScene" uid="uid://drfmlmppfhnvv" path="res://Prefabs/player/Player.tscn" id="5_g0syc"]
+[ext_resource type="PackedScene" uid="uid://c70rjciw8jpmp" path="res://Prefabs/Platforms/Arrow-Platform-Right-Up.tscn" id="6_cjj5o"]
+[ext_resource type="PackedScene" uid="uid://cva6uqqgs07qj" path="res://Prefabs/Platforms/Arrow-Platform-Left-Up.tscn" id="7_fc0y0"]
+[ext_resource type="PackedScene" uid="uid://cqp4i00n2gjgi" path="res://Prefabs/Platforms/Arrow-Platform-Left.tscn" id="8_phslp"]
+[ext_resource type="PackedScene" uid="uid://cvht4mdxk1qof" path="res://Prefabs/Platforms/Arrow-Platform-Up.tscn" id="9_sretr"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qb3tp"]
 
@@ -12,7 +17,7 @@
 
 [node name="Background" type="MeshInstance2D" parent="."]
 modulate = Color(1, 0.12549, 0.101961, 0.384314)
-scale = Vector2(11895, 6790)
+scale = Vector2(23897, 13641.1)
 mesh = SubResource("QuadMesh_qb3tp")
 metadata/_edit_lock_ = true
 
@@ -23,15 +28,193 @@ script = ExtResource("1_tx6bg")
 stream = ExtResource("3_tle50")
 
 [node name="BlockTiming" parent="AudioSyncPlayer" instance=ExtResource("4_e7114")]
-fileName = "res://LevelInfo/Level1.json"
+fileName = "res://LevelInfo/Level2.json"
 
-[node name="Section 1" type="Node2D" parent="."]
+[node name="SectionHolder" type="Node2D" parent="."]
+
+[node name="Section 1" type="Node2D" parent="SectionHolder"]
+
+[node name="Right1" parent="SectionHolder/Section 1" instance=ExtResource("5_5vdmh")]
+position = Vector2(75.914, 56)
+
+[node name="Right2" parent="SectionHolder/Section 1" instance=ExtResource("5_5vdmh")]
+position = Vector2(162.588, 56)
+
+[node name="Right3" parent="SectionHolder/Section 1" instance=ExtResource("5_5vdmh")]
+position = Vector2(246.007, 56)
+
+[node name="Right4" parent="SectionHolder/Section 1" instance=ExtResource("5_5vdmh")]
+position = Vector2(332.648, 56)
+
+[node name="RightUp5" parent="SectionHolder/Section 1" instance=ExtResource("6_cjj5o")]
+position = Vector2(412.619, 56)
+
+[node name="RightUp6" parent="SectionHolder/Section 1" instance=ExtResource("6_cjj5o")]
+position = Vector2(562.734, -94.115)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="LeftUp7" parent="SectionHolder/Section 1" instance=ExtResource("7_fc0y0")]
+position = Vector2(416.029, -240.82)
+rotation = 1.5708
+secondPlayerDirection = "right"
+
+[node name="RightUp8" parent="SectionHolder/Section 1" instance=ExtResource("6_cjj5o")]
+position = Vector2(559.342, -384.133)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="LeftUp9" parent="SectionHolder/Section 1" instance=ExtResource("7_fc0y0")]
+position = Vector2(409.374, -534.101)
+rotation = 1.5708
+secondPlayerDirection = "right"
+
+[node name="RightUp10" parent="SectionHolder/Section 1" instance=ExtResource("6_cjj5o")]
+position = Vector2(562.755, -687.482)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="Section 2" type="Node2D" parent="SectionHolder"]
+
+[node name="Left11" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(342.799, -887.438)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Right12" parent="SectionHolder/Section 2" instance=ExtResource("5_5vdmh")]
+position = Vector2(362.799, -1158.84)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Right13" parent="SectionHolder/Section 2" instance=ExtResource("5_5vdmh")]
+position = Vector2(92.843, -1158.84)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Right14" parent="SectionHolder/Section 2" instance=ExtResource("5_5vdmh")]
+position = Vector2(-227.22, -1158.84)
+rotation = 3.14159
+sendingPlayerDirection = "left"
+
+[node name="Up15" parent="SectionHolder/Section 2" instance=ExtResource("9_sretr")]
+position = Vector2(-453.827, -1158.84)
+rotation = 3.14159
+sendingPlayerDirection = "down"
+
+[node name="Left16" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(-453.827, -852.136)
+
+[node name="Left17" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(-670.436, -912.136)
+rotation = 1.5708
+sendingPlayerDirection = "up"
+
+[node name="Up18" parent="SectionHolder/Section 2" instance=ExtResource("9_sretr")]
+position = Vector2(-580.436, -1205.47)
+rotation = 4.71239
+sendingPlayerDirection = "left"
+
+[node name="LeftUp19" parent="SectionHolder/Section 2" instance=ExtResource("7_fc0y0")]
+position = Vector2(-800.353, -1205.47)
+rotation = 1.5708
+secondPlayerDirection = "right"
+
+[node name="Left20" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(-493.62, -1512.2)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Left21" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(-106.887, -1512.2)
+rotation = 3.14159
+input_pickable = false
+sendingPlayerDirection = "right"
+
+[node name="Left22" parent="SectionHolder/Section 2" instance=ExtResource("8_phslp")]
+position = Vector2(99.774, -1512.2)
+rotation = 3.14159
+input_pickable = false
+sendingPlayerDirection = "right"
+
+[node name="Section 3" type="Node2D" parent="SectionHolder"]
+
+[node name="RightUp23" parent="SectionHolder/Section 3" instance=ExtResource("6_cjj5o")]
+position = Vector2(483.098, -1452.2)
+rotation = 4.71239
+secondPlayerDirection = "left"
+
+[node name="LeftUp24" parent="SectionHolder/Section 3" instance=ExtResource("7_fc0y0")]
+position = Vector2(223.093, -1682.21)
+rotation = 1.5708
+secondPlayerDirection = "right"
+
+[node name="RightUp25" parent="SectionHolder/Section 3" instance=ExtResource("6_cjj5o")]
+position = Vector2(622.972, -2052.09)
+rotation = -1.5708
+secondPlayerDirection = "left"
+
+[node name="LeftUp26" parent="SectionHolder/Section 3" instance=ExtResource("7_fc0y0")]
+position = Vector2(369.514, -2275.54)
+rotation = 1.5708
+secondPlayerDirection = "right"
+
+[node name="Left27" parent="SectionHolder/Section 3" instance=ExtResource("8_phslp")]
+position = Vector2(769.514, -2735.54)
+rotation = 2.35619
+sendingPlayerDirection = "up"
+secondPlayerDirection = "right"
+
+[node name="Left28" parent="SectionHolder/Section 3" instance=ExtResource("8_phslp")]
+position = Vector2(1969.51, -3885.54)
+rotation = 3.14159
+sendingPlayerDirection = "right"
+
+[node name="Left29" parent="SectionHolder/Section 3" instance=ExtResource("8_phslp")]
+position = Vector2(2199.44, -3825.54)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Left30" parent="SectionHolder/Section 3" instance=ExtResource("8_phslp")]
+position = Vector2(2199.44, -3458.93)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Left31" parent="SectionHolder/Section 3" instance=ExtResource("8_phslp")]
+position = Vector2(2199.44, -3229)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Up32" parent="SectionHolder/Section 3" instance=ExtResource("9_sretr")]
+position = Vector2(2117.44, -2835.57)
+rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="LeftUp33" parent="SectionHolder/Section 3" instance=ExtResource("7_fc0y0")]
+position = Vector2(2374.09, -2835.57)
+rotation = 4.71239
+sendingPlayerDirection = "down"
+
+[node name="Up34" parent="SectionHolder/Section 3" instance=ExtResource("9_sretr")]
+position = Vector2(1957.37, -2458.85)
+rotation = 1.5708
+sendingPlayerDirection = "right"
+
+[node name="LeftUp35" parent="SectionHolder/Section 3" instance=ExtResource("7_fc0y0")]
+position = Vector2(2217.35, -2458.85)
+rotation = -1.5708
+sendingPlayerDirection = "down"
+
+[node name="Right36" parent="SectionHolder/Section 3" instance=ExtResource("5_5vdmh")]
+position = Vector2(1767.3, -2078.8)
+rotation = 1.5708
+sendingPlayerDirection = "down"
 
 [node name="Player" parent="." instance=ExtResource("5_g0syc")]
 gravity = 980
-movementSpeed = 150.0
-cirecleIncloseTimer = 0.31
+movementSpeed = 200.0
+cirecleIncloseTimer = 0.235
 
 [connection signal="changePlayerStartPosition" from="GameManager" to="Player" method="_on_game_manager_change_player_start_position"]
 [connection signal="startGame" from="GameManager" to="AudioSyncPlayer" method="_on_game_manager_start_game"]
 [connection signal="playerCollide" from="AudioSyncPlayer" to="Player" method="_on_audio_sync_player_player_collide"]
+[connection signal="startGame" from="Player" to="GameManager" method="_on_player_start_game"]
