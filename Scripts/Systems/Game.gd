@@ -4,6 +4,7 @@ extends Node2D
 @export var songOffset : float = 0
 @export var xOffset : float
 @export var yOffset : float
+@export var sectionHolder : Node2D
 
 var minPlatform = 0
 var maxPlatform = 9
@@ -19,9 +20,12 @@ func _process(_delta):
 
 func _on_player_start_game():
 	if(startIndex != 0):
-		for childeIndex in range($"../SectionHolder".get_child_count()):
+		for childeIndex in range(sectionHolder.get_child_count()):
 			if startIndex >= minPlatform && startIndex <= maxPlatform:
-				platformStart = $"../SectionHolder".get_child(childeIndex).get_child(startIndex - childeIndex * 10)
+				print(childeIndex)
+				print(startIndex - childeIndex * 10)
+				platformStart = sectionHolder.get_child(childeIndex).get_child(startIndex - childeIndex * 10)
+				print(sectionHolder.get_child(childeIndex))
 				break
 			else:
 				minPlatform += 10
