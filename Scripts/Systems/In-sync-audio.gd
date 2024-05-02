@@ -66,3 +66,4 @@ func _on_game_manager_start_game(startIndex : int, songOffset : float):
 	else:
 		play()
 	isPlaying.emit()
+	print("Song is playing")
