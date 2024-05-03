@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var uiManager : UiManger
+
 @export var startIndex : int = 0
 @export var songOffset : float = 0
 @export var xOffset : float
@@ -16,7 +18,10 @@ signal changePlayerStartPosition(pos : Vector2, direction : String, turnOfGravit
 
 func _process(_delta):
 	if Input.is_action_just_pressed("escape_input"):
-		get_tree().quit()
+		if !uiManager.visible:
+			uiManager._show_menu()
+		else:
+			uiManager._close_window()
 
 func _on_player_start_game():
 	if(startIndex != 0):

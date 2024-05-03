@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxxqsq8gf58r8"]
+[gd_scene load_steps=4 format=3 uid="uid://dxxqsq8gf58r8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Ui-Manager.gd" id="1_yj7y0"]
 [ext_resource type="PackedScene" uid="uid://6jhtjjwkutoo" path="res://Prefabs/UI/System/Pause-Ui.tscn" id="2_31jb8"]
+[ext_resource type="PackedScene" uid="uid://c8bh0ftqaahha" path="res://Prefabs/UI/System/Options-Ui.tscn" id="3_j1ida"]
 
-[node name="UiManager" type="Control"]
+[node name="UiManager" type="Control" node_paths=PackedStringArray("pauseUi", "optionUi")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,8 +12,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yj7y0")
+pauseUi = NodePath("PauseUi")
+optionUi = NodePath("Options-Ui")
 
 [node name="PauseUi" parent="." instance=ExtResource("2_31jb8")]
 layout_mode = 1
 
+[node name="Options-Ui" parent="." instance=ExtResource("3_j1ida")]
+layout_mode = 1
+
+[connection signal="closeGame" from="PauseUi" to="." method="_on_pause_ui_close_game"]
+[connection signal="closeWindow" from="PauseUi" to="." method="_on_pause_ui_close_window"]
+[connection signal="openMainMenu" from="PauseUi" to="." method="_on_pause_ui_open_main_menu"]
 [connection signal="openOptions" from="PauseUi" to="." method="_on_pause_ui_open_options"]
+[connection signal="restartLevel" from="PauseUi" to="." method="_on_pause_ui_restart_level"]
+[connection signal="closeOptions" from="Options-Ui" to="." method="_on_options_ui_close_options"]
+[connection signal="closeWindow" from="Options-Ui" to="." method="_on_options_ui_close_window"]

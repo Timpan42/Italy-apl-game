@@ -6,6 +6,10 @@ func _ready():
 	var root = get_tree().root
 	current_Scene = root.get_child(root.get_child_count() - 1)
 
+func _reload_scene():
+	var res_path = get_tree().current_scene.scene_file_path
+	call_deferred("_deferred_switch_scene", res_path)
+
 func _switch_scene(res_path):
 	call_deferred("_deferred_switch_scene", res_path)
 
@@ -15,3 +19,4 @@ func _deferred_switch_scene(res_path):
 	current_Scene = scene.instantiate()
 	get_tree().root.add_child(current_Scene)
 	get_tree().current_scene = current_Scene 
+	print(current_Scene.name)

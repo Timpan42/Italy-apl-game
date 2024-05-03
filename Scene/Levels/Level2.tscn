@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpt8cb2vrjmxl"]
+[gd_scene load_steps=13 format=3 uid="uid://dpt8cb2vrjmxl"]
 
+[ext_resource type="PackedScene" uid="uid://dxxqsq8gf58r8" path="res://Prefabs/UI/Ui-Manager.tscn" id="1_7dku2"]
 [ext_resource type="Script" path="res://Scripts/Systems/Game.gd" id="1_tx6bg"]
 [ext_resource type="PackedScene" uid="uid://dyarcbl7bqjqr" path="res://Prefabs/Systems/Audio-Sync-Player.tscn" id="2_bbavg"]
 [ext_resource type="AudioStream" uid="uid://bvghxihe4ry8i" path="res://Assets/Music/2019-01-22_-_Ready_to_Fight_-_David_Fesliyan.mp3" id="3_tle50"]
@@ -15,14 +16,21 @@
 
 [node name="Level2" type="Node2D"]
 
+[node name="MenuHud" type="CanvasLayer" parent="."]
+
+[node name="UiManager" parent="MenuHud" instance=ExtResource("1_7dku2")]
+visible = false
+
 [node name="Background" type="MeshInstance2D" parent="."]
 modulate = Color(1, 0.12549, 0.101961, 0.384314)
+z_index = -1
 scale = Vector2(23897, 13641.1)
 mesh = SubResource("QuadMesh_qb3tp")
 metadata/_edit_lock_ = true
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("sectionHolder")]
+[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("uiManager", "sectionHolder")]
 script = ExtResource("1_tx6bg")
+uiManager = NodePath("../MenuHud/UiManager")
 sectionHolder = NodePath("../SectionHolder")
 
 [node name="AudioSyncPlayer" parent="." instance=ExtResource("2_bbavg")]
