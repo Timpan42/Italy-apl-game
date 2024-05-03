@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/Close-Window.gd" id="2_t2hn0"]
 [ext_resource type="StyleBox" uid="uid://j34lbivo6yxg" path="res://Style/Audio-Panel.tres" id="3_sye80"]
 [ext_resource type="PackedScene" uid="uid://cebh3e3fu0w56" path="res://Prefabs/UI/System/Option-Slider.tscn" id="5_v06jq"]
-[ext_resource type="AudioStream" uid="uid://cropcgvi33ju2" path="res://Assets/Music/2022-03-05_-_Raging_Tides_-_www.FesliyanStudios.com.mp3" id="6_6m8y2"]
+[ext_resource type="AudioStream" uid="uid://bvghxihe4ry8i" path="res://Assets/Music/2019-01-22_-_Ready_to_Fight_-_David_Fesliyan.mp3" id="6_h8ti0"]
 
 [node name="Options-Ui" type="Control" node_paths=PackedStringArray("masterSlider", "musicSlider")]
 layout_mode = 3
@@ -111,7 +111,7 @@ layout_mode = 2
 bus_name = "Music"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_6m8y2")
+stream = ExtResource("6_h8ti0")
 autoplay = true
 bus = &"Music"
 
