@@ -4,6 +4,7 @@ extends Control
 @export var musicSlider : OptionSlider
  
 signal closeOptions
+signal closeWindow
 
 func _ready():
 	masterSlider._on_start(AudioManager.masterVolume)
@@ -20,3 +21,6 @@ func _on_back_pressed():
 
 func _on_save_pressed():
 	_save_audio_seting()
+
+func _on_close_window_pressed():
+	closeWindow.emit()

@@ -22,5 +22,10 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[connection signal="closeGame" from="PauseUi" to="." method="_on_pause_ui_close_game"]
+[connection signal="closeWindow" from="PauseUi" to="." method="_on_pause_ui_close_window"]
+[connection signal="openMainMenu" from="PauseUi" to="." method="_on_pause_ui_open_main_menu"]
 [connection signal="openOptions" from="PauseUi" to="." method="_on_pause_ui_open_options"]
+[connection signal="restartLevel" from="PauseUi" to="." method="_on_pause_ui_restart_level"]
 [connection signal="closeOptions" from="Options-Ui" to="." method="_on_options_ui_close_options"]
+[connection signal="closeWindow" from="Options-Ui" to="." method="_on_options_ui_close_window"]
