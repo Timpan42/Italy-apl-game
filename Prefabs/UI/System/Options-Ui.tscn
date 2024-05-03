@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8bh0ftqaahha"]
+[gd_scene load_steps=5 format=3 uid="uid://c8bh0ftqaahha"]
 
 [ext_resource type="Texture2D" uid="uid://b40e3hglkvjtg" path="res://Assets/Exit.png" id="1_0m784"]
 [ext_resource type="Script" path="res://Scripts/UI/Options-Ui.gd" id="1_hgsol"]
 [ext_resource type="StyleBox" uid="uid://j34lbivo6yxg" path="res://Style/Audio-Panel.tres" id="3_sye80"]
 [ext_resource type="PackedScene" uid="uid://cebh3e3fu0w56" path="res://Prefabs/UI/System/Option-Slider.tscn" id="5_v06jq"]
-[ext_resource type="AudioStream" uid="uid://bvghxihe4ry8i" path="res://Assets/Music/2019-01-22_-_Ready_to_Fight_-_David_Fesliyan.mp3" id="6_h8ti0"]
 
 [node name="Options-Ui" type="Control" node_paths=PackedStringArray("masterSlider", "musicSlider")]
 layout_mode = 3
@@ -107,11 +106,6 @@ horizontal_alignment = 1
 [node name="MusicSlider" parent="PauseMenu/PanelContainer/VBoxContainer" instance=ExtResource("5_v06jq")]
 layout_mode = 2
 bus_name = "Music"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_h8ti0")
-autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]

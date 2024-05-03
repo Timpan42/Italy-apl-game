@@ -19,7 +19,6 @@ optionUi = NodePath("Options-Ui")
 layout_mode = 1
 
 [node name="Options-Ui" parent="." instance=ExtResource("3_j1ida")]
-visible = false
 layout_mode = 1
 
 [connection signal="closeGame" from="PauseUi" to="." method="_on_pause_ui_close_game"]

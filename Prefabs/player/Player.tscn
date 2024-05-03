@@ -21,11 +21,12 @@ texture = ExtResource("2_rdam6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_akn0j")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-process_callback = 0
-position_smoothing_enabled = true
-
 [node name="Circle" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_8qvgr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+process_callback = 0
+position_smoothing_enabled = true

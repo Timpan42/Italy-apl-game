@@ -1,3 +1,5 @@
+class_name UiManger
+
 extends Control
 
 @export var pauseUi : Control
@@ -5,12 +7,16 @@ extends Control
 
 var menu_path = "res://Scene/Main-Menu.tscn"
 
-
 func _ready():
-	pauseUi.hide()
+	pauseUi.show()
 	optionUi.hide()
 
+func _show_menu():
+	show()
+	pauseUi.show()
+
 func _close_window():
+	hide()
 	pauseUi.hide()
 	optionUi.hide()
 
