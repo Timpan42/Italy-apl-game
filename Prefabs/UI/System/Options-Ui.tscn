@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8bh0ftqaahha"]
+
+[ext_resource type="Texture2D" uid="uid://b40e3hglkvjtg" path="res://Assets/Exit.png" id="1_0m784"]
+[ext_resource type="Script" path="res://Scripts/UI/Options-Ui.gd" id="1_hgsol"]
+[ext_resource type="Script" path="res://Scripts/UI/Close-Window.gd" id="2_t2hn0"]
+[ext_resource type="StyleBox" uid="uid://j34lbivo6yxg" path="res://Style/Audio-Panel.tres" id="3_sye80"]
+[ext_resource type="PackedScene" uid="uid://cebh3e3fu0w56" path="res://Prefabs/UI/System/Option-Slider.tscn" id="5_v06jq"]
+[ext_resource type="AudioStream" uid="uid://cropcgvi33ju2" path="res://Assets/Music/2022-03-05_-_Raging_Tides_-_www.FesliyanStudios.com.mp3" id="6_6m8y2"]
+
+[node name="Options-Ui" type="Control" node_paths=PackedStringArray("masterSlider", "musicSlider")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hgsol")
+masterSlider = NodePath("PauseMenu/PanelContainer/VBoxContainer/MasterSlider")
+musicSlider = NodePath("PauseMenu/PanelContainer/VBoxContainer/MusicSlider")
+
+[node name="PauseMenu" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 460.0
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 16.0
+offset_right = 23.5
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSE"
+
+[node name="Back" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 360.0
+offset_right = -8.5
+offset_bottom = 402.0
+grow_horizontal = 2
+text = "BACK"
+
+[node name="Save" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 16.5
+offset_top = 360.0
+offset_right = 127.5
+offset_bottom = 402.0
+grow_horizontal = 2
+text = "SAVE"
+
+[node name="CloseWindow" type="TextureButton" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 66.0
+offset_bottom = 66.0
+texture_normal = ExtResource("1_0m784")
+script = ExtResource("2_t2hn0")
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -110.5
+offset_right = 115.5
+offset_bottom = 78.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_sye80")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Master" type="Label" parent="PauseMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "MASTER VOLUME"
+horizontal_alignment = 1
+
+[node name="MasterSlider" parent="PauseMenu/PanelContainer/VBoxContainer" instance=ExtResource("5_v06jq")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music" type="Label" parent="PauseMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "MASTER VOLUME"
+horizontal_alignment = 1
+
+[node name="MusicSlider" parent="PauseMenu/PanelContainer/VBoxContainer" instance=ExtResource("5_v06jq")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6m8y2")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="PauseMenu/CloseWindow" to="PauseMenu/Back" method="_on_close_window_pressed"]
