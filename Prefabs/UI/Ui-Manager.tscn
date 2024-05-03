@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxxqsq8gf58r8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Ui-Manager.gd" id="1_yj7y0"]
+[ext_resource type="PackedScene" uid="uid://6jhtjjwkutoo" path="res://Prefabs/UI/System/Pause-Ui.tscn" id="2_31jb8"]
+
+[node name="UiManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yj7y0")
+
+[node name="PauseUi" parent="." instance=ExtResource("2_31jb8")]
+layout_mode = 1
+
+[connection signal="openOptions" from="PauseUi" to="." method="_on_pause_ui_open_options"]

@@ -15,9 +15,14 @@ run/main_scene="res://Levels/Level1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/Default-Audio-Bus-Layout.tres"
+
 [autoload]
 
-_JSON_PLATFORM_SAVE="*res://Scripts/Systems/Json-Block-Timing.gd"
+SceneManager="*res://Scripts/Systems/Scene-Manager.gd"
+AudioManager="*res://Audio/Audio-Manager.gd"
 
 [display]
 

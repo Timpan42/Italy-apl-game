@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cebh3e3fu0w56"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Option-Slider.gd" id="1_7q213"]
+[ext_resource type="Texture2D" uid="uid://hm3vnak5qomg" path="res://Assets/option arrow.png" id="2_oy6yq"]
+
+[node name="Option-Slider" type="HSlider"]
+offset_right = 8.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_7q213")
+
+[node name="Decrease" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 38.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_oy6yq")
+texture_pressed = ExtResource("2_oy6yq")
+
+[node name="Increase" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -12.0
+offset_right = 66.0
+offset_bottom = 38.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_oy6yq")
+texture_pressed = ExtResource("2_oy6yq")
+flip_h = true
+
+[connection signal="pressed" from="Decrease" to="." method="_on_decrease_pressed"]
+[connection signal="pressed" from="Increase" to="." method="_on_increase_pressed"]

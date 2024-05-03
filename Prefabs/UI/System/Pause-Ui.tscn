@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://6jhtjjwkutoo"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Pause-Ui.gd" id="1_b5fl4"]
+[ext_resource type="Script" path="res://Scripts/UI/Restart-Level.gd" id="1_tfklc"]
+[ext_resource type="Script" path="res://Scripts/UI/Open-Options.gd" id="2_3rh24"]
+[ext_resource type="Script" path="res://Scripts/UI/To-Main-Menu.gd" id="3_td7dw"]
+[ext_resource type="Script" path="res://Scripts/UI/Exit-Button.gd" id="4_8lmdr"]
+[ext_resource type="Texture2D" uid="uid://b40e3hglkvjtg" path="res://Assets/Exit.png" id="5_3xcmc"]
+[ext_resource type="Script" path="res://Scripts/UI/Close-Window.gd" id="6_ric7r"]
+
+[node name="PauseUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b5fl4")
+
+[node name="PauseMenu" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 460.0
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 16.0
+offset_right = 23.5
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSE"
+
+[node name="Restart" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 168.0
+offset_right = 55.5
+offset_bottom = 210.0
+grow_horizontal = 2
+text = "RESTART"
+script = ExtResource("1_tfklc")
+
+[node name="Options" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 232.0
+offset_right = 55.5
+offset_bottom = 274.0
+grow_horizontal = 2
+text = "OPTIONS"
+script = ExtResource("2_3rh24")
+
+[node name="MainMenu" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 296.0
+offset_right = 55.5
+offset_bottom = 338.0
+grow_horizontal = 2
+text = "MAIN MENU"
+script = ExtResource("3_td7dw")
+
+[node name="Exit" type="Button" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 360.0
+offset_right = 55.5
+offset_bottom = 402.0
+grow_horizontal = 2
+text = "QUIT GAME"
+script = ExtResource("4_8lmdr")
+
+[node name="CloseWindow" type="TextureButton" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture_normal = ExtResource("5_3xcmc")
+script = ExtResource("6_ric7r")
+
+[connection signal="pressed" from="PauseMenu/Restart" to="PauseMenu/Restart" method="_on_pressed"]
+[connection signal="pressed" from="PauseMenu/Options" to="PauseMenu/Options" method="_on_pressed"]
+[connection signal="toOptionMenu" from="PauseMenu/Options" to="." method="_on_options_to_option_menu"]
+[connection signal="pressed" from="PauseMenu/MainMenu" to="PauseMenu/MainMenu" method="_on_pressed"]
+[connection signal="pressed" from="PauseMenu/Exit" to="PauseMenu/Exit" method="_on_pressed"]
+[connection signal="pressed" from="PauseMenu/CloseWindow" to="PauseMenu/Exit" method="_on_close_window_pressed"]
