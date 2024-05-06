@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://6jhtjjwkutoo"]
+[gd_scene load_steps=7 format=3 uid="uid://6jhtjjwkutoo"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Pause-Ui.gd" id="1_b5fl4"]
-[ext_resource type="Texture2D" uid="uid://b40e3hglkvjtg" path="res://Assets/Exit.png" id="5_3xcmc"]
+[ext_resource type="Theme" uid="uid://bs4lriti3mm3k" path="res://Style/Button-Main-Menu.tres" id="2_3megt"]
+[ext_resource type="Script" path="res://Scripts/UI/Button-Effects.gd" id="2_s861b"]
+[ext_resource type="Texture2D" uid="uid://c2hs0tgi27kj" path="res://Assets/Exit2.png" id="4_c70xv"]
+
+[sub_resource type="FontVariation" id="FontVariation_ymhcu"]
+spacing_glyph = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfasg"]
+font = SubResource("FontVariation_ymhcu")
+font_size = 60
+font_color = Color(0.772549, 0.556863, 0, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [node name="PauseUi" type="Control"]
 layout_mode = 3
@@ -18,7 +33,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 700.0
 offset_bottom = 460.0
-color = Color(0.164706, 0.164706, 0.164706, 1)
+color = Color(0.14902, 0.0666667, 0.470588, 0.709804)
 
 [node name="Label" type="Label" parent="PauseMenu"]
 layout_mode = 1
@@ -32,65 +47,138 @@ offset_bottom = 39.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "PAUSE"
+label_settings = SubResource("LabelSettings_cfasg")
+horizontal_alignment = 1
 
-[node name="Restart" type="Button" parent="PauseMenu"]
+[node name="ButtonRestart" type="ColorRect" parent="PauseMenu"]
+offset_left = 281.0
+offset_top = 138.0
+offset_right = 402.0
+offset_bottom = 189.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_s861b")
+metadata/_edit_group_ = true
+
+[node name="Restart" type="Button" parent="PauseMenu/ButtonRestart"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -55.5
-offset_top = 168.0
-offset_right = 55.5
-offset_bottom = 210.0
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("2_3megt")
+theme_override_font_sizes/font_size = 20
 text = "RESTART"
 
-[node name="Options" type="Button" parent="PauseMenu"]
+[node name="ButtonOptins" type="ColorRect" parent="PauseMenu"]
+offset_left = 281.0
+offset_top = 210.0
+offset_right = 402.0
+offset_bottom = 261.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_s861b")
+metadata/_edit_group_ = true
+
+[node name="Options" type="Button" parent="PauseMenu/ButtonOptins"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -55.5
-offset_top = 232.0
-offset_right = 55.5
-offset_bottom = 274.0
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("2_3megt")
+theme_override_font_sizes/font_size = 20
 text = "OPTIONS"
 
-[node name="MainMenu" type="Button" parent="PauseMenu"]
+[node name="ButtonMainMenu" type="ColorRect" parent="PauseMenu"]
+offset_left = 281.0
+offset_top = 282.0
+offset_right = 402.0
+offset_bottom = 333.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_s861b")
+metadata/_edit_group_ = true
+
+[node name="MainMenu" type="Button" parent="PauseMenu/ButtonMainMenu"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -55.5
-offset_top = 296.0
-offset_right = 55.5
-offset_bottom = 338.0
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("2_3megt")
+theme_override_font_sizes/font_size = 20
 text = "MAIN MENU"
 
-[node name="Exit" type="Button" parent="PauseMenu"]
+[node name="ButtonExit" type="ColorRect" parent="PauseMenu"]
+offset_left = 281.0
+offset_top = 354.0
+offset_right = 402.0
+offset_bottom = 405.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_s861b")
+metadata/_edit_group_ = true
+
+[node name="Exit" type="Button" parent="PauseMenu/ButtonExit"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -55.5
-offset_top = 360.0
-offset_right = 55.5
-offset_bottom = 402.0
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("2_3megt")
+theme_override_font_sizes/font_size = 20
 text = "QUIT GAME"
 
-[node name="CloseWindow" type="TextureButton" parent="PauseMenu"]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 56.0
-offset_bottom = 56.0
-texture_normal = ExtResource("5_3xcmc")
+offset_left = 41.0
+offset_top = 34.0
+offset_right = 105.0
+offset_bottom = 98.0
+color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="PauseMenu/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="PauseMenu/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PauseMenu/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PauseMenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="PauseMenu/CloseWindow" to="." method="_on_close_window_pressed"]
+[node name="CloseWindow" type="TextureButton" parent="ColorRect"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("4_c70xv")
+stretch_mode = 0
+
+[connection signal="focus_entered" from="PauseMenu/ButtonRestart/Restart" to="PauseMenu/ButtonRestart" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonRestart/Restart" to="PauseMenu/ButtonRestart" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonRestart/Restart" to="PauseMenu/ButtonRestart" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonRestart/Restart" to="PauseMenu/ButtonRestart" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonRestart/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_entered" from="PauseMenu/ButtonOptins/Options" to="PauseMenu/ButtonOptins" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonOptins/Options" to="PauseMenu/ButtonOptins" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonOptins/Options" to="PauseMenu/ButtonOptins" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonOptins/Options" to="PauseMenu/ButtonOptins" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonOptins/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="PauseMenu/ButtonMainMenu/MainMenu" to="PauseMenu/ButtonMainMenu" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonMainMenu/MainMenu" to="PauseMenu/ButtonMainMenu" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonMainMenu/MainMenu" to="PauseMenu/ButtonMainMenu" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonMainMenu/MainMenu" to="PauseMenu/ButtonMainMenu" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonMainMenu/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="focus_entered" from="PauseMenu/ButtonExit/Exit" to="PauseMenu/ButtonExit" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonExit/Exit" to="PauseMenu/ButtonExit" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonExit/Exit" to="PauseMenu/ButtonExit" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonExit/Exit" to="PauseMenu/ButtonExit" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonExit/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/CloseWindow" to="." method="_on_close_window_pressed"]

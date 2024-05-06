@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8bh0ftqaahha"]
+[gd_scene load_steps=9 format=3 uid="uid://c8bh0ftqaahha"]
 
-[ext_resource type="Texture2D" uid="uid://b40e3hglkvjtg" path="res://Assets/Exit.png" id="1_0m784"]
 [ext_resource type="Script" path="res://Scripts/UI/Options-Ui.gd" id="1_hgsol"]
+[ext_resource type="Script" path="res://Scripts/UI/Button-Effects.gd" id="2_k2dw6"]
+[ext_resource type="Theme" uid="uid://bs4lriti3mm3k" path="res://Style/Button-Main-Menu.tres" id="3_7ay1h"]
 [ext_resource type="StyleBox" uid="uid://j34lbivo6yxg" path="res://Style/Audio-Panel.tres" id="3_sye80"]
+[ext_resource type="Texture2D" uid="uid://c2hs0tgi27kj" path="res://Assets/Exit2.png" id="4_jhjx1"]
 [ext_resource type="PackedScene" uid="uid://cebh3e3fu0w56" path="res://Prefabs/UI/System/Option-Slider.tscn" id="5_v06jq"]
+
+[sub_resource type="FontVariation" id="FontVariation_qv85a"]
+spacing_glyph = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_wx0xk"]
+font = SubResource("FontVariation_qv85a")
+font_size = 60
+font_color = Color(0.772549, 0.556863, 0, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [node name="Options-Ui" type="Control" node_paths=PackedStringArray("masterSlider", "musicSlider")]
 layout_mode = 3
@@ -22,7 +37,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 700.0
 offset_bottom = 460.0
-color = Color(0.164706, 0.164706, 0.164706, 1)
+color = Color(0.14902, 0.0666667, 0.470588, 0.709804)
 
 [node name="Label" type="Label" parent="PauseMenu"]
 layout_mode = 1
@@ -35,39 +50,71 @@ offset_right = 23.5
 offset_bottom = 39.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
-text = "PAUSE"
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_wx0xk")
 
-[node name="Back" type="Button" parent="PauseMenu"]
+[node name="ButtonBack" type="ColorRect" parent="PauseMenu"]
+offset_left = 220.5
+offset_top = 360.0
+offset_right = 341.5
+offset_bottom = 411.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_k2dw6")
+metadata/_edit_group_ = true
+
+[node name="Back" type="Button" parent="PauseMenu/ButtonBack"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -119.5
-offset_top = 360.0
-offset_right = -8.5
-offset_bottom = 402.0
+offset_left = -55.5
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("3_7ay1h")
+theme_override_font_sizes/font_size = 30
 text = "BACK"
 
-[node name="Save" type="Button" parent="PauseMenu"]
+[node name="ButtonSave" type="ColorRect" parent="PauseMenu"]
+offset_left = 356.5
+offset_top = 360.0
+offset_right = 477.5
+offset_bottom = 411.0
+color = Color(0, 0, 0, 0.584314)
+script = ExtResource("2_k2dw6")
+metadata/_edit_group_ = true
+
+[node name="Save" type="Button" parent="PauseMenu/ButtonSave"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 16.5
-offset_top = 360.0
-offset_right = 127.5
-offset_bottom = 402.0
+offset_left = -55.5
+offset_top = 4.0
+offset_right = 56.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("3_7ay1h")
+theme_override_font_sizes/font_size = 30
 text = "SAVE"
 
-[node name="CloseWindow" type="TextureButton" parent="PauseMenu"]
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 76.0
+offset_bottom = 73.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="CloseWindow" type="TextureButton" parent="PauseMenu/ColorRect"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 66.0
-offset_bottom = 66.0
-texture_normal = ExtResource("1_0m784")
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("4_jhjx1")
+stretch_mode = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -77,9 +124,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.5
-offset_top = -110.5
+offset_top = -58.5
 offset_right = 115.5
-offset_bottom = 78.5
+offset_bottom = 58.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("3_sye80")
@@ -107,6 +154,14 @@ horizontal_alignment = 1
 layout_mode = 2
 bus_name = "Music"
 
-[connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="PauseMenu/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="PauseMenu/CloseWindow" to="." method="_on_close_window_pressed"]
+[connection signal="focus_entered" from="PauseMenu/ButtonBack/Back" to="PauseMenu/ButtonBack" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonBack/Back" to="PauseMenu/ButtonBack" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonBack/Back" to="PauseMenu/ButtonBack" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonBack/Back" to="PauseMenu/ButtonBack" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonBack/Back" to="." method="_on_back_pressed"]
+[connection signal="focus_entered" from="PauseMenu/ButtonSave/Save" to="PauseMenu/ButtonSave" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="PauseMenu/ButtonSave/Save" to="PauseMenu/ButtonSave" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="PauseMenu/ButtonSave/Save" to="PauseMenu/ButtonSave" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ButtonSave/Save" to="PauseMenu/ButtonSave" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ButtonSave/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/CloseWindow" to="." method="_on_close_window_pressed"]
