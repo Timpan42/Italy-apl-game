@@ -198,6 +198,7 @@ offset_right = 191.0
 offset_bottom = 201.0
 grow_horizontal = 1
 grow_vertical = 1
+levelName = "1"
 toLevel = "res://Scene/Levels/Level1.tscn"
 
 [node name="Select-level 2" parent="LevelSelect/Levels" instance=ExtResource("5_qn4ug")]
@@ -241,5 +242,6 @@ layout_mode = 1
 [connection signal="mouse_entered" from="Main/ButtonQuit/Button" to="Main/ButtonQuit" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Main/ButtonQuit/Button" to="Main/ButtonQuit" method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Main/ButtonQuit/Button" to="." method="_on_button_quit_pressed"]
+[connection signal="changeLevel" from="LevelSelect/Levels" to="." method="_on_levels_change_level"]
 [connection signal="closeOptions" from="Options-Ui" to="." method="_on_options_ui_close_options"]
 [connection signal="closeWindow" from="Options-Ui" to="." method="_on_options_ui_close_window"]

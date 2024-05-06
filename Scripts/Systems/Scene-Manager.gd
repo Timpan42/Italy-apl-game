@@ -19,4 +19,4 @@ func _deferred_switch_scene(res_path):
 	current_Scene = scene.instantiate()
 	get_tree().root.add_child(current_Scene)
 	get_tree().current_scene = current_Scene 
-	print(current_Scene.name)
+	#print(current_Scene.name)
