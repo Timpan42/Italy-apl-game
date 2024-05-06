@@ -21,4 +21,3 @@ func _on_exit_pressed():
 
 func _on_options_pressed():
 	openOptions.emit()
-
